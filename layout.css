@@ -1,0 +1,79 @@
+/* ============================================================
+   layout.css — Page Structure & Grid
+   Single Responsibility: spatial layout of the page shell.
+   No colors, no typography — only positioning and sizing.
+   ============================================================ */
+
+/* ── Page wrapper ─────────────────────────────────────────── */
+.page {
+  position: relative;
+  z-index: var(--z-content);
+  max-width: var(--layout-max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-7) var(--space-14);
+}
+
+/* ── Header ───────────────────────────────────────────────── */
+.header {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: var(--space-9);
+  align-items: end;
+  padding: var(--space-13) 0 var(--space-10);
+  border-bottom: var(--border-line);
+  animation: fadeUp var(--anim-fade-up-duration) ease both;
+}
+
+.header__left {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--space-8);
+}
+
+/* ── Main content grid ────────────────────────────────────── */
+.content-grid {
+  display: grid;
+  grid-template-columns: 1fr var(--sidebar-width);
+  gap: 0 var(--grid-gap);
+  margin-top: var(--space-12);
+}
+
+/* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 700px) {
+  .header {
+    grid-template-columns: 1fr;
+  }
+
+  .header__photo {
+    justify-content: center;
+  }
+
+  .header__contact {
+    align-items: flex-start;
+  }
+
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    order: -1;
+  }
+
+  .exp-item {
+    grid-template-columns: 60px 1fr;
+  }
+}
+
+/* ── Print ────────────────────────────────────────────────── */
+@media print {
+  .page {
+    padding: 20px;
+    max-width: 100%;
+  }
+
+  .content-grid,
+  .header {
+    animation: none !important;
+  }
+}

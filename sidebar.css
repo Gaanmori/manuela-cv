@@ -1,0 +1,152 @@
+/* ============================================================
+   components/sidebar.css — Sidebar Components
+   Single Responsibility: sidebar card shell, skills bars,
+   language circles, and education entries.
+   ============================================================ */
+
+/* ── Sidebar wrapper ──────────────────────────────────────── */
+.sidebar {
+  animation: fadeUp var(--anim-fade-up-duration) 0.1s ease both;
+}
+
+/* ── Card ─────────────────────────────────────────────────── */
+.sidebar-card {
+  background: var(--color-warm);
+  border: var(--border-line);
+  border-radius: var(--radius-md);
+  padding: var(--space-8);
+  margin-bottom: var(--space-8);
+}
+
+.sidebar-card .section-label {
+  font-size: 1.3rem;
+}
+
+/* ── Skills list ──────────────────────────────────────────── */
+.skill-list {
+  list-style: none;
+}
+
+.skill-list__item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: var(--space-4);
+}
+
+.skill-list__item:last-child {
+  margin-bottom: 0;
+}
+
+.skill-list__name {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--color-brown);
+  display: flex;
+  justify-content: space-between;
+}
+
+/* ── Skill bar ────────────────────────────────────────────── */
+.skill-bar {
+  height: 3px;
+  background: var(--color-sand);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.skill-bar__fill {
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    var(--color-terracota),
+    var(--color-terra-lt)
+  );
+  border-radius: var(--radius-sm);
+  transform-origin: left;
+  animation: barGrow var(--anim-bar-duration) var(--anim-bar-delay)
+    cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+/* ── Language grid ────────────────────────────────────────── */
+.lang-grid {
+  display: flex;
+  gap: var(--space-5);
+  flex-wrap: wrap;
+}
+
+.lang-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.lang-item__circle {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 2px solid var(--color-sand);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: var(--weight-bold);
+  color: var(--color-terracota);
+  background: var(--color-cream);
+}
+
+.lang-item__circle--muted {
+  color: var(--color-muted);
+}
+
+.lang-item__level {
+  font-size: 0.65rem;
+  font-weight: var(--weight-medium);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+/* ── Education entries ────────────────────────────────────── */
+.edu-item {
+  margin-bottom: var(--space-5);
+}
+
+.edu-item:last-child {
+  margin-bottom: 0;
+}
+
+.edu-item__degree {
+  font-family: var(--font-serif);
+  font-size: var(--text-md);
+  font-weight: var(--weight-bold);
+  color: var(--color-brown);
+}
+
+.edu-item__school {
+  font-size: 0.75rem;
+  font-weight: var(--weight-medium);
+  color: var(--color-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin-top: 2px;
+}
+
+.edu-item__year {
+  font-size: 0.7rem;
+  color: var(--color-sand);
+  font-weight: var(--weight-medium);
+}
+
+/* ── Profile note ─────────────────────────────────────────── */
+.profile-note {
+  font-size: 0.8rem;
+  color: var(--color-muted);
+  line-height: var(--leading-normal);
+}
+
+/* ── Print ────────────────────────────────────────────────── */
+@media print {
+  .sidebar { animation: none !important; }
+}
