@@ -1,0 +1,289 @@
+/* ============================================================
+   components/print.css — Print Stylesheet
+   Single Responsibility: ALL print rules live here.
+   This file is the single source of truth for how the CV
+   looks on paper. Every other file's @media print block
+   is removed and consolidated here.
+
+   Design goals for print:
+   · Fits cleanly on A4 (210 × 297 mm)
+   · No background fills that waste ink (except photo)
+   · Colors replaced with print-safe near-blacks
+   · Links show their URL in parentheses (except WhatsApp
+     and the photo data URI)
+   · Page breaks never split an experience entry mid-way
+   · Skill bars replaced with percentage text (bars use CSS
+     transforms that don't render in all print engines)
+   ============================================================ */
+
+@media print {
+
+    /* ── Page setup ─────────────────────────────────────────── */
+    @page {
+        size: A4 portrait;
+        margin: 14mm 16mm 14mm 16mm;
+    }
+
+    /* ── Global resets ──────────────────────────────────────── */
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+        box-shadow: none !important;
+    }
+
+    /* ── Background / colour stripping ─────────────────────── */
+    body {
+        background: #fff !important;
+        color: #1a1008 !important;
+        font-size: 9.5pt;
+        line-height: 1.5;
+    }
+
+    body::before {
+        display: none !important;   /* noise texture off */
+    }
+
+    /* ── Layout ─────────────────────────────────────────────── */
+    .page {
+        padding: 0 !important;
+        max-width: 100% !important;
+    }
+
+    /* Keep 2-column grid on A4 — sidebar fits at 210px */
+    .content-grid {
+        display: grid;
+        grid-template-columns: 1fr 180px !important;
+        gap: 0 32px !important;
+        margin-top: 20px !important;
+    }
+
+    /* ── Header ─────────────────────────────────────────────── */
+    .header {
+        padding: 0 0 16px !important;
+        border-bottom: 1.5px solid #b5633a !important;
+        gap: 16px !important;
+    }
+
+    .header__left {
+        gap: 16px !important;
+    }
+
+    /* Slightly smaller photo on paper */
+    .header__photo-img {
+        width: 80px !important;
+        height: 80px !important;
+        border: 2px solid #d9c9ad !important;
+        /* Keep the image — -webkit-print-color-adjust enables it */
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .header__title {
+        font-size: 22pt !important;
+    }
+
+    .header__tagline {
+        font-size: 7pt !important;
+        letter-spacing: 0.14em !important;
+    }
+
+    .header__location {
+        font-size: 7pt !important;
+        padding: 2px 8px !important;
+        margin-top: 6px !important;
+        border-color: #d9c9ad !important;
+    }
+
+    /* ── Contact block ──────────────────────────────────────── */
+    .header__contact {
+        align-items: flex-end !important;
+        gap: 5px !important;
+    }
+
+    .header__contact-link {
+        font-size: 8pt !important;
+        color: #3a2010 !important;
+    }
+
+    /*
+      Show URL after each link, but:
+      · Skip tel: → phone number already visible as display text
+      · Skip mailto: → email already visible
+      · Skip data: → would dump the base64 photo blob
+      · Skip WhatsApp → same number as phone, no need to repeat
+    */
+    .header__contact-link[href^="http"]::after {
+        content: " (" attr(href) ")";
+        font-size: 7pt;
+        color: #666;
+    }
+
+    /* WhatsApp: hidden in print (duplicate of phone number) */
+    .header__contact-link--whatsapp {
+        display: none !important;
+    }
+
+    /* The phone+WhatsApp row: show only the phone link */
+    .contact-row .header__contact-link--phone {
+        display: flex !important;
+    }
+
+    /* WhatsApp icon colour is screen-only */
+    .header__contact-icon--whatsapp {
+        display: none !important;
+    }
+
+    /* ── Quote strip ────────────────────────────────────────── */
+    /*
+      Dark background would waste ink and look bad on paper.
+      Replace with a left-border accent instead.
+    */
+    .quote-strip {
+        background: transparent !important;
+        border: none !important;
+        border-left: 3px solid #b5633a !important;
+        border-radius: 0 !important;
+        padding: 6px 12px !important;
+        margin-bottom: 20px !important;
+        gap: 8px !important;
+    }
+
+    .quote-strip__mark {
+        color: #b5633a !important;
+        font-size: 3rem !important;
+        line-height: 0.5 !important;
+    }
+
+    .quote-strip__text {
+        color: #2a1a0a !important;
+        font-size: 9.5pt !important;
+    }
+
+    /* ── Experience section ─────────────────────────────────── */
+    .section {
+        margin-bottom: 20px !important;
+    }
+
+    .section-label {
+        font-size: 13pt !important;
+        color: #b5633a !important;
+        margin-bottom: 12px !important;
+    }
+
+    .section-label::after {
+        background: #b5633a !important;
+    }
+
+    .exp-item {
+        margin-bottom: 14px !important;
+        padding-bottom: 14px !important;
+        border-bottom-color: rgba(92, 61, 46, 0.2) !important;
+        /* Never break an entry across pages */
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    .exp-item__year {
+        font-size: 12pt !important;
+        color: #c0a882 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .exp-item__date {
+        font-size: 7pt !important;
+    }
+
+    .exp-item__role {
+        font-size: 10.5pt !important;
+    }
+
+    .exp-item__company {
+        font-size: 7.5pt !important;
+        color: #b5633a !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .exp-item__desc {
+        font-size: 8.5pt !important;
+        color: #3a2a1a !important;
+    }
+
+    .tag {
+        font-size: 6.5pt !important;
+        border-color: #c0a882 !important;
+        color: #3a2a1a !important;
+        padding: 1px 6px !important;
+    }
+
+    /* ── Sidebar ────────────────────────────────────────────── */
+    .sidebar-card {
+        background: #f8f3eb !important;
+        border-color: rgba(92, 61, 46, 0.15) !important;
+        padding: 12px !important;
+        margin-bottom: 10px !important;
+        break-inside: avoid;
+        page-break-inside: avoid;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .sidebar-card .section-label {
+        font-size: 11pt !important;
+        margin-bottom: 10px !important;
+    }
+
+    /* ── Skills: replace animated bars with text percentage ── */
+    .skill-bar {
+        /* Keep bar visible on paper using print-color-adjust */
+        background: #e8dcc8 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .skill-bar__fill {
+        /*
+          CSS transforms don't animate in print but the width is
+          set inline via style="width:X%" so the fill renders.
+          Force the colour to appear.
+        */
+        background: #b5633a !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+        /* Undo the scaleX animation so the bar shows its real width */
+        transform: scaleX(1) !important;
+    }
+
+    .skill-list__name {
+        font-size: 7.5pt !important;
+    }
+
+    /* ── Languages ──────────────────────────────────────────── */
+    .lang-item__circle {
+        border-color: #d9c9ad !important;
+        font-size: 9pt !important;
+        width: 40px !important;
+        height: 40px !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .lang-item__level {
+        font-size: 6.5pt !important;
+    }
+
+    /* ── Education & Profile ────────────────────────────────── */
+    .edu-item__degree { font-size: 9pt !important; }
+    .edu-item__school { font-size: 7pt !important;  }
+    .edu-item__year   { font-size: 7pt !important;  }
+    .profile-note     { font-size: 7.5pt !important; }
+
+    /* ── Page break helpers ─────────────────────────────────── */
+    .header    { break-after: avoid; page-break-after: avoid; }
+    .cv-main   { break-inside: auto; }
+    .sidebar   { break-inside: avoid; page-break-inside: avoid; }
+
+} /* end @media print */

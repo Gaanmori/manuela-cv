@@ -102,7 +102,16 @@ export function renderContact(contacts) {
   if (phoneEntry || whatsappEntry) {
     const row = el('div', ['contact-row']);
 
-    // Render WhatsApp first so the icon sits to the left of the phone number
+    if (phoneEntry) {
+      const a = document.createElement('a');
+      a.href = esc(phoneEntry.href);
+      a.className = 'header__contact-link header__contact-link--phone';
+      a.setAttribute('aria-label', esc(phoneEntry.label));
+      a.innerHTML = `<span class="header__contact-icon">${getIcon('phone')}</span> ${esc(phoneEntry.display)}`;
+      row.appendChild(a);
+      appended.add(phoneEntry);
+    }
+
     if (whatsappEntry) {
       const a = document.createElement('a');
       a.href = esc(whatsappEntry.href);
@@ -121,16 +130,6 @@ export function renderContact(contacts) {
       `;
       row.appendChild(a);
       appended.add(whatsappEntry);
-    }
-
-    if (phoneEntry) {
-      const a = document.createElement('a');
-      a.href = esc(phoneEntry.href);
-      a.className = 'header__contact-link header__contact-link--phone';
-      a.setAttribute('aria-label', esc(phoneEntry.label));
-      a.innerHTML = `<span class="header__contact-icon">${getIcon('phone')}</span> ${esc(phoneEntry.display)}`;
-      row.appendChild(a);
-      appended.add(phoneEntry);
     }
 
     wrapper.appendChild(row);

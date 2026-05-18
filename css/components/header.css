@@ -1,8 +1,7 @@
 /* ============================================================
    components/header.css — Header Area Components
    Single Responsibility: visual styling of header elements.
-   Covers: profile photo, name block, tagline, location badge,
-   and contact information.
+   Print rules → see components/print.css
    ============================================================ */
 
 /* ── Profile photo ────────────────────────────────────────── */
@@ -24,8 +23,6 @@
 }
 
 /* ── Name block ───────────────────────────────────────────── */
-.header__name {}
-
 .header__title {
   font-family: var(--font-serif);
   font-weight: var(--weight-light);
@@ -42,7 +39,7 @@
 
 .header__tagline {
   margin-top: var(--space-3);
-  font-size: var(--base-size, var(--text-base));
+  font-size: var(--text-base);
   font-weight: var(--weight-medium);
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -78,18 +75,25 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-2);
-  align-items: flex-start; /* align contacts to the left within the contact column */
+  align-items: flex-end;
   animation: fadeUp 0.8s 0.15s ease both;
 }
 
-/* Row used to group phone + whatsapp on the same visual line */
+/* ── Phone + WhatsApp grouped row ─────────────────────────── */
 .contact-row {
   display: flex;
   align-items: center;
-  gap: 12px;
-  white-space: nowrap; /* keep phone+whatsapp on a single line when possible */
+  gap: 0;
 }
 
+/* Vertical divider between WA icon and phone number */
+.contact-row .header__contact-link--whatsapp {
+  padding-right: 10px;
+  margin-right: 10px;
+  border-right: 1px solid var(--color-sand);
+}
+
+/* ── Contact link base ────────────────────────────────────── */
 .header__contact-link {
   display: flex;
   align-items: center;
@@ -101,12 +105,28 @@
   transition: var(--transition-color);
 }
 
-.header__contact-link--whatsapp {
-  font-size: var(--text-sm);
-  color: var(--color-muted);
+.header__contact-link:hover {
+  color: var(--color-terracota);
 }
 
-/* Accessibility helper: visually hidden but available to screen readers */
+/* WhatsApp goes green on hover */
+.header__contact-link--whatsapp:hover {
+  color: #25D366;
+}
+
+.header__contact-link--whatsapp:hover .header__contact-icon {
+  fill: #25D366;
+}
+
+.header__contact-icon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  fill: currentColor;
+  transition: fill 0.2s ease;
+}
+
+/* ── Accessibility ────────────────────────────────────────── */
 .sr-only {
   position: absolute !important;
   width: 1px !important;
@@ -118,36 +138,3 @@
   white-space: nowrap !important;
   border: 0 !important;
 }
-
-.header__contact-link:hover {
-  color: var(--color-terracota);
-}
-
-.header__contact-icon {
-  width: 14px;
-  height: 14px;
-  flex-shrink: 0;
-  fill: currentColor;
-}
-
-/* Print-friendly: append href after links and avoid printing WhatsApp separately */
-@media print {
-  .header__contact-link::after {
-    content: " (" attr(href) ")";
-    font-size: 10pt;
-    color: #000;
-    text-decoration: none;
-    white-space: normal;
-  }
-
-  .header__contact-link {
-    color: #000;
-    text-decoration: none;
-  }
-
-  /* Hide WhatsApp entry in print to prevent duplicate phone number/URLs */
-  .header__contact-link--whatsapp {
-    display: none;
-  }
-}
-

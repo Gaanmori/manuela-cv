@@ -21,3 +21,6 @@
 @import './components/quote.css';
 @import './components/experience.css';
 @import './components/sidebar.css';
+
+/* 5 · Print overrides (always last — highest specificity for print) */
+@import './components/print.css';
