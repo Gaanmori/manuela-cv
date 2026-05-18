@@ -26,8 +26,9 @@ export const CV_DATA = {
 
   contact: [
     { label: 'Teléfono',  href: 'tel:614088475',                                          display: '614 088 475',                   icon: 'phone'    },
+    { label: 'WhatsApp',  href: 'https://wa.me/34614088475',                              display: 'WhatsApp: 614 088 475',         icon: 'whatsapp' },
     { label: 'Email',     href: 'mailto:mecheverrypineda@gmail.com',                       display: 'mecheverrypineda@gmail.com',    icon: 'email'    },
-    { label: 'LinkedIn',  href: 'https://www.linkedin.com/in/manuela-echeverry-pineda-11841b288/', display: 'LinkedIn',              icon: 'linkedin' },
+    { label: 'LinkedIn',  href: 'https://www.linkedin.com/in/manu-echeverry/',            display: 'linkedin.com/in/manu-echeverry', icon: 'linkedin' },
   ],
 
   experience: [

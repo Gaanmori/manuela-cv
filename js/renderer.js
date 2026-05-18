@@ -93,7 +93,54 @@ export function renderNameBlock(person) {
 export function renderContact(contacts) {
   const wrapper = el('div', ['header__contact']);
 
+  // Merge phone + whatsapp into a single visual row when both provided
+  const phoneEntry = contacts.find(c => c.icon === 'phone' || c.label.toLowerCase().includes('tel'));
+  const whatsappEntry = contacts.find(c => c.icon === 'whatsapp' || c.label.toLowerCase().includes('whatsapp'));
+
+  const appended = new Set();
+
+  if (phoneEntry || whatsappEntry) {
+    const row = el('div', ['contact-row']);
+
+    // Render WhatsApp first so the icon sits to the left of the phone number
+    if (whatsappEntry) {
+      const a = document.createElement('a');
+      a.href = esc(whatsappEntry.href);
+      a.className = 'header__contact-link header__contact-link--whatsapp';
+      a.setAttribute('aria-label', esc(whatsappEntry.label));
+
+      // WhatsApp opens in new tab
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer';
+
+      // Show only the WhatsApp icon visually to avoid repeating the number;
+      // include invisible text for screen readers.
+      a.innerHTML = `
+        <span class="header__contact-icon">${getIcon('whatsapp')}</span>
+        <span class="sr-only">${esc(whatsappEntry.display)}</span>
+      `;
+      row.appendChild(a);
+      appended.add(whatsappEntry);
+    }
+
+    if (phoneEntry) {
+      const a = document.createElement('a');
+      a.href = esc(phoneEntry.href);
+      a.className = 'header__contact-link header__contact-link--phone';
+      a.setAttribute('aria-label', esc(phoneEntry.label));
+      a.innerHTML = `<span class="header__contact-icon">${getIcon('phone')}</span> ${esc(phoneEntry.display)}`;
+      row.appendChild(a);
+      appended.add(phoneEntry);
+    }
+
+    wrapper.appendChild(row);
+  }
+
+  // Append remaining contacts (email, linkedin, etc.)
   contacts.forEach(({ label, href, display, icon }) => {
+    const already = [...appended].some(e => e && (e.href === href || e.display === display));
+    if (already) return;
+
     const a = document.createElement('a');
     a.href      = esc(href);
     a.className = 'header__contact-link';
