@@ -1,0 +1,105 @@
+/* ============================================================
+   components/header.css — Header Area Components
+   Single Responsibility: visual styling of header elements.
+   Covers: profile photo, name block, tagline, location badge,
+   and contact information.
+   ============================================================ */
+
+/* ── Profile photo ────────────────────────────────────────── */
+.header__photo {
+  display: flex;
+  align-items: flex-end;
+  flex-shrink: 0;
+}
+
+.header__photo-img {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  border: 3px solid var(--color-sand);
+  box-shadow: var(--shadow-photo);
+  filter: saturate(0.95);
+}
+
+/* ── Name block ───────────────────────────────────────────── */
+.header__name {}
+
+.header__title {
+  font-family: var(--font-serif);
+  font-weight: var(--weight-light);
+  font-size: var(--text-2xl);
+  line-height: var(--leading-tight);
+  letter-spacing: -0.5px;
+  color: var(--color-brown);
+}
+
+.header__title em {
+  font-style: italic;
+  color: var(--color-terracota);
+}
+
+.header__tagline {
+  margin-top: var(--space-3);
+  font-size: var(--base-size, var(--text-base));
+  font-weight: var(--weight-medium);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+/* ── Location badge ───────────────────────────────────────── */
+.header__location {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 12px;
+  padding: 3px 10px;
+  border: var(--border-sand);
+  border-radius: var(--radius-full);
+  font-size: 0.65rem;
+  font-weight: var(--weight-medium);
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  animation: fadeUp 0.8s 0.25s ease both;
+}
+
+.header__location-icon {
+  width: 10px;
+  height: 10px;
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
+/* ── Contact block ────────────────────────────────────────── */
+.header__contact {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  align-items: flex-end;
+  animation: fadeUp 0.8s 0.15s ease both;
+}
+
+.header__contact-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--text-sm);
+  font-weight: var(--weight-regular);
+  color: var(--color-muted);
+  text-decoration: none;
+  transition: var(--transition-color);
+}
+
+.header__contact-link:hover {
+  color: var(--color-terracota);
+}
+
+.header__contact-icon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  fill: currentColor;
+}

@@ -1,0 +1,39 @@
+/* ============================================================
+   components/quote.css — Achievement Quote Strip
+   Single Responsibility: the decorative quote banner that
+   appears between the header and the main/sidebar grid.
+   ============================================================ */
+
+.quote-strip {
+  background: var(--color-brown);
+  border-radius: var(--radius-md);
+  padding: var(--space-8) 32px;
+  margin-bottom: var(--space-11);
+  display: flex;
+  gap: var(--space-6);
+  align-items: flex-start;
+  animation: fadeUp var(--anim-fade-up-duration) 0.2s ease both;
+}
+
+.quote-strip__mark {
+  font-family: var(--font-serif);
+  font-size: 5rem;
+  line-height: 0.6;
+  color: var(--color-terracota);
+  flex-shrink: 0;
+  user-select: none;
+}
+
+.quote-strip__text {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-style: italic;
+  font-weight: var(--weight-light);
+  color: var(--color-warm);
+  line-height: 1.6;
+}
+
+/* ── Print ────────────────────────────────────────────────── */
+@media print {
+  .quote-strip { animation: none !important; }
+}

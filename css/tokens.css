@@ -1,0 +1,83 @@
+/* ============================================================
+   tokens.css — Design System Variables
+   Single Responsibility: all design decisions live here.
+   Changing a value here propagates everywhere automatically.
+   ============================================================ */
+
+:root {
+  /* ── Palette ── */
+  --color-cream:     #faf7f2;
+  --color-warm:      #f0e8d8;
+  --color-sand:      #d9c9ad;
+  --color-terracota: #b5633a;
+  --color-terra-lt:  #c97d55;
+  --color-brown:     #5c3d2e;
+  --color-dark:      #1e1410;
+  --color-muted:     #8a7060;
+  --color-line:      rgba(92, 61, 46, 0.15);
+
+  /* ── Typography ── */
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans:  'DM Sans', system-ui, sans-serif;
+
+  --text-xs:   0.68rem;
+  --text-sm:   0.78rem;
+  --text-base: 0.85rem;
+  --text-md:   1rem;
+  --text-lg:   1.15rem;
+  --text-xl:   1.6rem;
+  --text-2xl:  clamp(2.6rem, 6vw, 4.2rem);
+
+  --weight-light:   300;
+  --weight-regular: 400;
+  --weight-medium:  500;
+  --weight-bold:    600;
+
+  --leading-tight:  1.05;
+  --leading-normal: 1.7;
+  --leading-relaxed:1.75;
+
+  /* ── Spacing ── */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  10px;
+  --space-4:  14px;
+  --space-5:  16px;
+  --space-6:  20px;
+  --space-7:  24px;
+  --space-8:  28px;
+  --space-9:  32px;
+  --space-10: 48px;
+  --space-11: 52px;
+  --space-12: 56px;
+  --space-13: 72px;
+  --space-14: 80px;
+
+  /* ── Borders & Radii ── */
+  --radius-sm:   4px;
+  --radius-md:   12px;
+  --radius-full: 9999px;
+  --border-line: 1px solid var(--color-line);
+  --border-sand: 1px solid var(--color-sand);
+
+  /* ── Shadows ── */
+  --shadow-photo: 0 4px 24px rgba(92, 61, 46, 0.18);
+
+  /* ── Transitions ── */
+  --transition-color: color 0.2s ease;
+
+  /* ── Layout ── */
+  --layout-max-width:    900px;
+  --sidebar-width:       280px;
+  --grid-gap:            56px;
+  --exp-date-col-width:  80px;
+
+  /* ── Z-index ── */
+  --z-texture: 0;
+  --z-content: 1;
+
+  /* ── Animation ── */
+  --anim-fade-up-duration: 0.7s;
+  --anim-bar-duration:     1s;
+  --anim-bar-delay:        1s;
+}
