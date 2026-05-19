@@ -18,16 +18,16 @@ export const CV_DATA = {
     tagline:   'Gestión Operativa · Hostelería · Atención al Cliente',
     location:  'Sagunto, Comunidad Valenciana · España',
     summary:
-      'Profesional con más de 9 años de experiencia combinando gestión ' +
-      'administrativa, atención al cliente y operaciones. Orientada a ' +
-      'resultados, con probada capacidad de adaptación en entornos ' +
-      'multiculturales e internacionales.',
+        'Profesional con más de 9 años de experiencia combinando gestión ' +
+        'administrativa, atención al cliente y operaciones. Orientada a ' +
+        'resultados, con probada capacidad de adaptación en entornos ' +
+        'multiculturales e internacionales.',
   },
 
   contact: [
     { label: 'Teléfono',  href: 'tel:614088475',                                          display: '614 088 475',                   icon: 'phone'    },
     { label: 'Email',     href: 'mailto:mecheverrypineda@gmail.com',                       display: 'mecheverrypineda@gmail.com',    icon: 'email'    },
-    { label: 'LinkedIn',  href: 'https://www.linkedin.com/in/manuela-echeverry-pineda-11841b288/', display: 'LinkedIn',              icon: 'linkedin' },
+    { label: 'LinkedIn',  href: 'https://www.linkedin.com/in/manu-echeverry/', display: 'linkedin.com/in/manu-echeverry',              icon: 'linkedin' },
   ],
 
   experience: [
@@ -104,7 +104,7 @@ export const CV_DATA = {
   ],
 
   profileNote:
-    'Residente en España con permiso de trabajo. Alta capacidad de adaptación ' +
-    'a nuevos entornos culturales y operativos. Orientada al detalle, proactiva ' +
-    'y con fuerte ética de trabajo.',
+      'Residente en España con permiso de trabajo. Alta capacidad de adaptación ' +
+      'a nuevos entornos culturales y operativos. Orientada al detalle, proactiva ' +
+      'y con fuerte ética de trabajo.',
 };
