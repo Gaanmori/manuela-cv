@@ -35,11 +35,13 @@ import { PHOTO_SRC } from './assets/photo.js';
 /* ── Certificate PDFs (base64) ────────────────────────────── */
 import { CERT_COMMUNITY_MANAGER } from './assets/cert-community-manager.js';
 import { CERT_IA }                from './assets/cert-ia.js';
+import { DIPLOMA_COLEGIO }        from './assets/diploma-colegio.js';
 
 /** Maps pdfExport keys in data.js to their base64 data URIs. */
 const CERT_MAP = {
   CERT_COMMUNITY_MANAGER,
   CERT_IA,
+  DIPLOMA_COLEGIO,
 };
 
 /* ── Mount ────────────────────────────────────────────────── */
@@ -84,10 +86,16 @@ function mount() {
       pdfSrc: CERT_MAP[c.pdfExport] ?? null,
     }));
 
+    // Resolve pdfExport keys for education items as well
+    const eduWithPdf = education.map(e => ({
+      ...e,
+      pdfSrc: CERT_MAP[e.pdfExport] ?? null,
+    }));
+
     const sidebarItems = [
       renderSkillsCard(skills),
       renderLanguagesCard(languages),
-      renderEducationCard(education),
+      renderEducationCard(eduWithPdf),
       renderCertificationsCard(certsWithPdf),
       renderProfileCard(profileNote),
     ];

@@ -220,7 +220,8 @@ export function renderLanguagesCard(languages) {
 
 /**
  * Renders the education card.
- * @param {Array<{degree,school,period}>} education
+ * Supports conditional rendering for items with attachment diplomas.
+ * @param {Array<{degree,school,period,pdfSrc}>} education
  * @returns {HTMLElement}
  */
 export function renderEducationCard(education) {
@@ -229,11 +230,34 @@ export function renderEducationCard(education) {
   h2.textContent = 'Educación';
   card.appendChild(h2);
 
-  education.forEach(({ degree, school, period }) => {
-    card.appendChild(el('div', ['edu-item'],
-        `<div class="edu-item__degree">${esc(degree)}</div>
-       <div class="edu-item__school">${esc(school)}</div>
-       <div class="edu-item__year">${esc(period)}</div>`));
+  education.forEach(({ degree, school, period, pdfSrc }) => {
+    const item = el('div', ['edu-item']);
+
+    // Degree title: renders as an interactive button if pdfSrc is available
+    if (pdfSrc) {
+      const btn = el('button', ['cert-item__name', 'cert-item__name--link']);
+      btn.textContent = degree;
+      btn.title       = `Ver diploma: ${degree}`;
+      btn.setAttribute('aria-label', `Abrir diploma de ${degree}`);
+      btn.addEventListener('click', () => {
+        const byteStr  = atob(pdfSrc.split(',')[1]);
+        const bytes    = new Uint8Array(byteStr.length);
+        for (let i = 0; i < byteStr.length; i++) bytes[i] = byteStr.charCodeAt(i);
+        const blob     = new Blob([bytes], { type: 'application/pdf' });
+        const blobUrl  = URL.createObjectURL(blob);
+        window.open(blobUrl, '_blank', 'noopener');
+        setTimeout(() => URL.revokeObjectURL(blobUrl), 10_000);
+      });
+      item.appendChild(btn);
+    } else {
+      item.appendChild(el('div', ['edu-item__degree'], esc(degree)));
+    }
+
+    // Issuer school and period block
+    item.appendChild(el('div', ['edu-item__school'], esc(school)));
+    item.appendChild(el('div', ['edu-item__year'], esc(period)));
+
+    card.appendChild(item);
   });
 
   return card;
