@@ -25,11 +25,22 @@ import {
   renderSkillsCard,
   renderLanguagesCard,
   renderEducationCard,
+  renderCertificationsCard,
   renderProfileCard,
 }                             from './renderer.js';
 
 /* ── Photo source (inlined from assets/photo.js) ─────────── */
 import { PHOTO_SRC } from './assets/photo.js';
+
+/* ── Certificate PDFs (base64) ────────────────────────────── */
+import { CERT_COMMUNITY_MANAGER } from './assets/cert-community-manager.js';
+import { CERT_IA }                from './assets/cert-ia.js';
+
+/** Maps pdfExport keys in data.js to their base64 data URIs. */
+const CERT_MAP = {
+  CERT_COMMUNITY_MANAGER,
+  CERT_IA,
+};
 
 /* ── Mount ────────────────────────────────────────────────── */
 
@@ -38,7 +49,7 @@ import { PHOTO_SRC } from './assets/photo.js';
  * Called once the DOM is ready.
  */
 function mount() {
-  const { person, contact, experience, skills, languages, education, profileNote } = CV_DATA;
+  const { person, contact, experience, skills, languages, education, certifications, profileNote } = CV_DATA;
 
   /* Header */
   const headerLeft = document.querySelector('.header__left');
@@ -67,10 +78,17 @@ function mount() {
   /* Sidebar */
   const sidebarEl = document.querySelector('.sidebar');
   if (sidebarEl) {
+    // Resolve pdfExport keys to actual base64 data URIs before rendering
+    const certsWithPdf = certifications.map(c => ({
+      ...c,
+      pdfSrc: CERT_MAP[c.pdfExport] ?? null,
+    }));
+
     const sidebarItems = [
       renderSkillsCard(skills),
       renderLanguagesCard(languages),
       renderEducationCard(education),
+      renderCertificationsCard(certsWithPdf),
       renderProfileCard(profileNote),
     ];
     sidebarItems.forEach(node => sidebarEl.appendChild(node));

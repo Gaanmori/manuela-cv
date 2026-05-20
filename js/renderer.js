@@ -38,10 +38,10 @@ function el(tag, classes = [], html = '') {
  */
 function esc(str) {
   return str
-    .replace(/&/g, '&amp;')
-    .replace(/"/g, '&quot;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;');
+      .replace(/&/g, '&amp;')
+      .replace(/"/g, '&quot;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;');
 }
 
 /* ── Section renderers (Interface Segregation) ────────────── */
@@ -73,12 +73,12 @@ export function renderNameBlock(person) {
   const wrapper = el('div', ['header__name']);
 
   const h1 = el('h1', ['header__title'],
-    `${esc(person.firstName)}<br><em>${esc(person.lastName)}</em>`);
+      `${esc(person.firstName)}<br><em>${esc(person.lastName)}</em>`);
 
   const tagline = el('p', ['header__tagline'], esc(person.tagline));
 
   const location = el('span', ['header__location'],
-    `<span class="header__location-icon">${getIcon('pin')}</span>
+      `<span class="header__location-icon">${getIcon('pin')}</span>
      ${esc(person.location)}`);
 
   wrapper.append(h1, tagline, location);
@@ -105,7 +105,7 @@ export function renderContact(contacts) {
     }
 
     a.innerHTML =
-      `<span class="header__contact-icon">${getIcon(icon)}</span>
+        `<span class="header__contact-icon">${getIcon(icon)}</span>
        ${esc(display)}`;
 
     wrapper.appendChild(a);
@@ -121,7 +121,7 @@ export function renderContact(contacts) {
  */
 export function renderQuoteStrip(summary) {
   return el('div', ['quote-strip'],
-    `<span class="quote-strip__mark" aria-hidden="true">"</span>
+      `<span class="quote-strip__mark" aria-hidden="true">"</span>
      <p class="quote-strip__text">${esc(summary)}</p>`);
 }
 
@@ -132,11 +132,11 @@ export function renderQuoteStrip(summary) {
  */
 function renderExpItem(exp) {
   const tags = exp.tags
-    .map(t => `<span class="tag">${esc(t)}</span>`)
-    .join('');
+      .map(t => `<span class="tag">${esc(t)}</span>`)
+      .join('');
 
   return el('article', ['exp-item'],
-    `<div class="exp-item__date">
+      `<div class="exp-item__date">
        <span class="exp-item__year">${esc(exp.year)}</span>
        ${esc(exp.period)}
      </div>
@@ -180,7 +180,7 @@ export function renderSkillsCard(skills) {
   const ul = el('ul', ['skill-list']);
   skills.forEach(({ name, pct }) => {
     const li = el('li', ['skill-list__item'],
-      `<span class="skill-list__name">${esc(name)}</span>
+        `<span class="skill-list__name">${esc(name)}</span>
        <div class="skill-bar">
          <div class="skill-bar__fill" style="width:${pct}%"
               role="meter" aria-valuenow="${pct}" aria-valuemin="0"
@@ -208,7 +208,7 @@ export function renderLanguagesCard(languages) {
   const grid = el('div', ['lang-grid']);
   languages.forEach(({ code, label, muted }) => {
     const item = el('div', ['lang-item'],
-      `<div class="lang-item__circle${muted ? ' lang-item__circle--muted' : ''}"
+        `<div class="lang-item__circle${muted ? ' lang-item__circle--muted' : ''}"
             aria-label="${esc(code)}">${esc(code)}</div>
        <span class="lang-item__level">${esc(label)}</span>`);
     grid.appendChild(item);
@@ -231,9 +231,60 @@ export function renderEducationCard(education) {
 
   education.forEach(({ degree, school, period }) => {
     card.appendChild(el('div', ['edu-item'],
-      `<div class="edu-item__degree">${esc(degree)}</div>
+        `<div class="edu-item__degree">${esc(degree)}</div>
        <div class="edu-item__school">${esc(school)}</div>
        <div class="edu-item__year">${esc(period)}</div>`));
+  });
+
+  return card;
+}
+
+/**
+ * Renders the certifications card.
+ * Each cert name is clickable and opens its PDF in a new tab.
+ * @param {Array<{name,issuer,period,tags,pdfSrc}>} certifications
+ * @returns {HTMLElement}
+ */
+export function renderCertificationsCard(certifications) {
+  const card = el('div', ['sidebar-card']);
+  const h2   = el('h2', ['section-label']);
+  h2.textContent = 'Formación';
+  card.appendChild(h2);
+
+  certifications.forEach(({ name, issuer, period, tags, pdfSrc }) => {
+    const tagsHtml = tags
+        .map(t => `<span class="cert-tag">${esc(t)}</span>`)
+        .join('');
+
+    const item = el('div', ['cert-item']);
+
+    // Name — clickable if a PDF is available
+    if (pdfSrc) {
+      const btn = el('button', ['cert-item__name', 'cert-item__name--link']);
+      btn.textContent = name;
+      btn.title       = `Ver diploma: ${name}`;
+      btn.setAttribute('aria-label', `Abrir diploma de ${name}`);
+      btn.addEventListener('click', () => {
+        // Convert data URI to a Blob URL so the browser opens it as a PDF
+        const byteStr  = atob(pdfSrc.split(',')[1]);
+        const bytes    = new Uint8Array(byteStr.length);
+        for (let i = 0; i < byteStr.length; i++) bytes[i] = byteStr.charCodeAt(i);
+        const blob     = new Blob([bytes], { type: 'application/pdf' });
+        const blobUrl  = URL.createObjectURL(blob);
+        window.open(blobUrl, '_blank', 'noopener');
+        // Revoke after a short delay to free memory once the tab has loaded
+        setTimeout(() => URL.revokeObjectURL(blobUrl), 10_000);
+      });
+      item.appendChild(btn);
+    } else {
+      item.appendChild(el('div', ['cert-item__name'], esc(name)));
+    }
+
+    item.appendChild(el('div', ['cert-item__issuer'],  esc(issuer)));
+    item.appendChild(el('div', ['cert-item__period'],   esc(period)));
+    item.appendChild(el('div', ['cert-item__tags'],     tagsHtml));
+
+    card.appendChild(item);
   });
 
   return card;

@@ -103,6 +103,23 @@ export const CV_DATA = {
     },
   ],
 
+  certifications: [
+    {
+      name:      'Principios del Community Manager',
+      issuer:    'Generalitat Valenciana · Adecco',
+      period:    'Abr 2026 · 25 h',
+      tags:      ['Comunicación digital', 'Marketing', 'RRSS'],
+      pdfExport: 'CERT_COMMUNITY_MANAGER',
+    },
+    {
+      name:      'Introducción a la Inteligencia Artificial',
+      issuer:    'Generalitat Valenciana · Adecco',
+      period:    'Mar 2026 · 25 h',
+      tags:      ['IA', 'Herramientas digitales'],
+      pdfExport: 'CERT_IA',
+    },
+  ],
+
   profileNote:
       'Residente en España con permiso de trabajo. Alta capacidad de adaptación ' +
       'a nuevos entornos culturales y operativos. Orientada al detalle, proactiva ' +

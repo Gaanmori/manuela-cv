@@ -57,14 +57,14 @@
 .skill-bar__fill {
   height: 100%;
   background: linear-gradient(
-    90deg,
-    var(--color-terracota),
-    var(--color-terra-lt)
+          90deg,
+          var(--color-terracota),
+          var(--color-terra-lt)
   );
   border-radius: var(--radius-sm);
   transform-origin: left;
   animation: barGrow var(--anim-bar-duration) var(--anim-bar-delay)
-    cubic-bezier(0.4, 0, 0.2, 1) both;
+  cubic-bezier(0.4, 0, 0.2, 1) both;
 }
 
 /* ── Language grid ────────────────────────────────────────── */
@@ -137,6 +137,87 @@
   font-size: 0.7rem;
   color: var(--color-sand);
   font-weight: var(--weight-medium);
+}
+
+/* ── Certification entries ────────────────────────────────── */
+.cert-item {
+  margin-bottom: var(--space-5);
+  padding-bottom: var(--space-5);
+  border-bottom: var(--border-line);
+}
+
+.cert-item:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.cert-item__name {
+  font-family: var(--font-serif);
+  font-size: var(--text-md);
+  font-weight: var(--weight-bold);
+  color: var(--color-brown);
+  line-height: 1.3;
+}
+
+/* Clickable variant — styled as text, behaves as button */
+.cert-item__name--link {
+  display: block;
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 0;
+  text-align: left;
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-color: var(--color-sand);
+  text-underline-offset: 3px;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+.cert-item__name--link:hover {
+  color: var(--color-terracota);
+  text-decoration-color: var(--color-terracota);
+}
+
+.cert-item__name--link:focus-visible {
+  outline: 2px solid var(--color-terracota);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.cert-item__issuer {
+  font-size: 0.7rem;
+  font-weight: var(--weight-medium);
+  color: var(--color-terracota);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin-top: 2px;
+}
+
+.cert-item__period {
+  font-size: 0.68rem;
+  color: var(--color-muted);
+  font-weight: var(--weight-medium);
+  margin-top: 2px;
+}
+
+.cert-item__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: var(--space-2);
+}
+
+.cert-tag {
+  font-size: 0.62rem;
+  font-weight: var(--weight-medium);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 1px 7px;
+  border: var(--border-sand);
+  border-radius: var(--radius-full);
+  color: var(--color-brown);
 }
 
 /* ── Profile note ─────────────────────────────────────────── */
