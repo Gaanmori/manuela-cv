@@ -97,6 +97,11 @@ export const CV_DATA = {
 
   education: [
     {
+      degree:  'Bachiller Académico',
+      school:  'Gimnasio Cervantes de Cartagena · Colombia',
+      period:  '2015',
+    },
+    {
       degree:  'Lingüística y Literatura',
       school:  'Universidad de Cartagena · Colombia',
       period:  '2016 – 2025',
