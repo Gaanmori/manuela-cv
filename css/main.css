@@ -1,23 +1,29 @@
 /* ============================================================
    main.css — CSS Entry Point (Open/Closed Principle)
    Import order matters: tokens → base → layout → components.
-   To add a new component, create its CSS file and add one
-   @import here — no other file needs to change.
+   Para añadir un componente nuevo: crear su CSS e importarlo
+   aquí — ningún otro archivo necesita cambiar.
+
+   Los estilos de impresión están consolidados en print.css
+   (siempre al final, mayor especificidad sobre el resto).
    ============================================================ */
 
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap');
 
-/* 1 · Design tokens (all variables, no rules) */
+/* 1 · Design tokens (variables, sin reglas) */
 @import './tokens.css';
 
-/* 2 · Reset + global rules */
+/* 2 · Reset + reglas globales */
 @import './base.css';
 
-/* 3 · Page-level layout */
+/* 3 · Layout de página */
 @import './layout.css';
 
-/* 4 · UI components (order-independent) */
+/* 4 · Componentes UI */
 @import './components/header.css';
 @import './components/quote.css';
 @import './components/experience.css';
 @import './components/sidebar.css';
+
+/* 5 · Impresión — siempre el último, mayor prioridad en print */
+@import './components/print.css';

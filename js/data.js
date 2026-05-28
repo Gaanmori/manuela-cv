@@ -18,33 +18,32 @@ export const CV_DATA = {
     tagline:   'Gestión Operativa · Hostelería · Atención al Cliente',
     location:  'Sagunto, Comunidad Valenciana · España',
     summary:
-        'Profesional con más de 9 años de experiencia combinando gestión ' +
-        'administrativa, atención al cliente y operaciones. Orientada a ' +
-        'resultados, con probada capacidad de adaptación en entornos ' +
-        'multiculturales e internacionales.',
+        'Más de 9 años de trayectoria en administración, atención al cliente ' +
+        'y operaciones. Perfil polivalente, orientado a resultados y con ' +
+        'rápida adaptación a entornos multiculturales.',
   },
 
   contact: [
-    { label: 'Teléfono',  href: 'tel:614088475',                                          display: '614 088 475',                   icon: 'phone'    },
-    { label: 'Email',     href: 'mailto:mecheverrypineda@gmail.com',                       display: 'mecheverrypineda@gmail.com',    icon: 'email'    },
-    { label: 'LinkedIn',  href: 'https://www.linkedin.com/in/manu-echeverry/', display: 'linkedin.com/in/manu-echeverry',              icon: 'linkedin' },
+    { label: 'Teléfono', href: 'tel:614088475',                               display: '614 088 475',                    icon: 'phone'    },
+    { label: 'Email',    href: 'mailto:mecheverrypineda@gmail.com',            display: 'mecheverrypineda@gmail.com',     icon: 'email'    },
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/manu-echeverry/', display: 'linkedin.com/in/manu-echeverry', icon: 'linkedin' },
   ],
 
   experience: [
     {
       year:    '2026',
       period:  'Mayo · Presente',
-      role:    'Auxiliar de Hostelería / Personal de Sala y Caja',
+      role:    'Auxiliar de Hostelería — Sala y Caja',
       company: "Restaurante Arrocería CA' RAFA — Canet d'en Berenguer, España",
-      desc:    'Gestión de punto de venta y cobros, atención directa en caja, recepción de comensales y organización de sala. Coordinación de pedidos take away, garantizando satisfacción y rapidez del servicio. Apoyo operativo en horas punta.',
-      tags:    ['POS / Caja', 'Take Away', 'Atención al cliente'],
+      desc:    'Gestión de caja y TPV, recepción de comensales, organización de sala y coordinación de pedidos take away. Apoyo operativo durante horas punta.',
+      tags:    ['TPV / Caja', 'Take Away', 'Atención al cliente'],
     },
     {
       year:    '2026',
       period:  'Ene – Abr',
       role:    'Auxiliar de Hostelería',
       company: 'Cafetería El Encuentro — Sagunto, España',
-      desc:    'Servicio de barra y sala, preparación de cafés y productos de carta corta. Gestión de caja y trabajo bajo presión en entornos de alto volumen.',
+      desc:    'Servicio de barra y sala, elaboración de cafés y carta corta. Gestión de caja en entornos de alto volumen.',
       tags:    ['Barra', 'Alto volumen', 'Caja'],
     },
     {
@@ -52,15 +51,15 @@ export const CV_DATA = {
       period:  "Jun – Oct '25",
       role:    'Auxiliar Administrativa',
       company: 'Hy Cite — Medellín, Colombia',
-      desc:    'Gestión y seguimiento de cartera de clientes, conciliaciones y reportes financieros. Elaboración de documentos administrativos, coordinación con áreas comerciales y manejo avanzado de herramientas ofimáticas. Logro clave: optimización de tiempos en conciliación de cartera.',
+      desc:    'Seguimiento de cartera, conciliaciones y reportes financieros. Coordinación con el área comercial y gestión documental. Logro: reducción de tiempos en conciliación mediante optimización de procesos.',
       tags:    ['Cartera', 'Excel', 'Facturación', 'Reportes'],
     },
     {
       year:    '2021',
       period:  'Abr – Jun',
-      role:    'Telemarketing',
+      role:    'Agente de Telemarketing',
       company: 'Hy Cite — Cartagena de Indias, Colombia',
-      desc:    'Contacto de clientes potenciales, promoción de productos Royal Prestige y agendamiento de citas para el equipo comercial. Superación de metas de contacto y conversión.',
+      desc:    'Contacto outbound para presentación de productos Royal Prestige y agendamiento de citas comerciales. Superación constante de metas de conversión.',
       tags:    ['Outbound', 'CRM', 'Conversión'],
     },
     {
@@ -68,7 +67,7 @@ export const CV_DATA = {
       period:  "Abr – Abr '21",
       role:    'Auxiliar Administrativo',
       company: 'Movistar — Cartagena de Indias, Colombia',
-      desc:    'Administración documental, conciliación de ventas diarias y reportes. Coordinación operativa para entrega de productos y servicios. Supervisión de inventarios y equipos. Logro: mejoras en organización documental que redujeron tiempos de gestión.',
+      desc:    'Gestión documental, conciliación de ventas diarias y control de inventarios. Coordinación operativa entre áreas para la entrega de productos y servicios. Logro: mejora en organización documental que redujo tiempos de gestión.',
       tags:    ['Inventarios', 'Caja / Conciliación', 'Portabilidades'],
     },
     {
@@ -76,7 +75,7 @@ export const CV_DATA = {
       period:  "Oct – Abr '17",
       role:    'Auxiliar de Operaciones',
       company: 'Movistar — Cartagena de Indias, Colombia',
-      desc:    'Control de inventarios de equipos y accesorios, gestión de activaciones y portabilidades, apoyo en caja y resolución de incidencias operativas.',
+      desc:    'Control de inventarios, gestión de activaciones y portabilidades, apoyo en caja y resolución de incidencias operativas.',
       tags:    ['Operaciones', 'Activaciones', 'Soporte'],
     },
   ],
@@ -87,25 +86,25 @@ export const CV_DATA = {
     { name: 'Facturación / Cartera',  pct: 88 },
     { name: 'Excel / Google Sheets',  pct: 85 },
     { name: 'Google Drive',           pct: 83 },
-    { name: 'Hostelería / POS',       pct: 80 },
+    { name: 'Hostelería / TPV',       pct: 80 },
   ],
 
   languages: [
-    { code: 'ES', label: 'Nativo',  muted: false },
-    { code: 'EN', label: 'Básico',  muted: true  },
+    { code: 'ES', label: 'Nativo', muted: false },
+    { code: 'EN', label: 'Básico', muted: true  },
   ],
 
   education: [
     {
-      degree:  'Bachiller Académico',
-      school:  'Gimnasio Cervantes de Cartagena · Colombia',
-      period:  '2015',
+      degree:    'Bachillerato · Educación Media (homologado)',
+      school:    'Gimnasio Cervantes de Cartagena · Colombia',
+      period:    '2015',
       pdfExport: 'DIPLOMA_COLEGIO',
     },
     {
-      degree:  'Lingüística y Literatura',
-      school:  'Universidad de Cartagena · Colombia',
-      period:  '2016 – 2025',
+      degree: 'Lingüística y Literatura',
+      school: 'Universidad de Cartagena · Colombia',
+      period: '2016 – 2025',
     },
   ],
 
@@ -127,7 +126,6 @@ export const CV_DATA = {
   ],
 
   profileNote:
-      'Residente en España con permiso de trabajo. Alta capacidad de adaptación ' +
-      'a nuevos entornos culturales y operativos. Orientada al detalle, proactiva ' +
-      'y con fuerte ética de trabajo.',
+      'Permiso de trabajo en vigor. Orientada al detalle, proactiva y con ' +
+      'fuerte ética de trabajo. Disponibilidad inmediata.',
 };
