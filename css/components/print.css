@@ -301,7 +301,7 @@
 
     .edu-item__school,
     .cert-item__issuer {
-        font-size: 6.5pt !important;
+        font-size: 6pt !important;
         color: #b5633a !important;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
@@ -309,7 +309,7 @@
 
     .edu-item__year,
     .cert-item__period {
-        font-size: 6.5pt !important;
+        font-size: 6pt !important;
     }
 
     .cert-item {
