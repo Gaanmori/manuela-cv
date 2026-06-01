@@ -23,10 +23,8 @@ import {
   renderQuoteStrip,
   renderExperience,
   renderSkillsCard,
-  renderLanguagesCard,
   renderEducationCard,
   renderCertificationsCard,
-  renderProfileCard,
 }                             from './renderer.js';
 
 /* ── Photo source (inlined from assets/photo.js) ─────────── */
@@ -36,12 +34,16 @@ import { PHOTO_SRC } from './assets/photo.js';
 import { CERT_COMMUNITY_MANAGER } from './assets/cert-community-manager.js';
 import { CERT_IA }                from './assets/cert-ia.js';
 import { DIPLOMA_COLEGIO }        from './assets/diploma-colegio.js';
+import { CERT_MANIPULADOR }       from './assets/cert-manipulador.js';
+import { DIPLOMA_MANIPULADOR }    from './assets/diploma-manipulador.js';
 
 /** Maps pdfExport keys in data.js to their base64 data URIs. */
 const CERT_MAP = {
   CERT_COMMUNITY_MANAGER,
   CERT_IA,
   DIPLOMA_COLEGIO,
+  CERT_MANIPULADOR,
+  DIPLOMA_MANIPULADOR,
 };
 
 /* ── Mount ────────────────────────────────────────────────── */
@@ -51,7 +53,7 @@ const CERT_MAP = {
  * Called once the DOM is ready.
  */
 function mount() {
-  const { person, contact, experience, skills, languages, education, certifications, profileNote } = CV_DATA;
+  const { person, contact, experience, skills, education, certifications } = CV_DATA;
 
   /* Header */
   const headerLeft = document.querySelector('.header__left');
@@ -83,7 +85,9 @@ function mount() {
     // Resolve pdfExport keys to actual base64 data URIs before rendering
     const certsWithPdf = certifications.map(c => ({
       ...c,
-      pdfSrc: CERT_MAP[c.pdfExport] ?? null,
+      pdfSrc: Array.isArray(c.pdfExport)
+          ? c.pdfExport.map(key => CERT_MAP[key] ?? null)
+          : CERT_MAP[c.pdfExport] ?? null,
     }));
 
     // Resolve pdfExport keys for education items as well
@@ -94,10 +98,8 @@ function mount() {
 
     const sidebarItems = [
       renderSkillsCard(skills),
-      renderLanguagesCard(languages),
       renderEducationCard(eduWithPdf),
       renderCertificationsCard(certsWithPdf),
-      renderProfileCard(profileNote),
     ];
     sidebarItems.forEach(node => sidebarEl.appendChild(node));
   }

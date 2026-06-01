@@ -18,9 +18,9 @@ export const CV_DATA = {
     tagline:   'Gestión Operativa · Hostelería · Atención al Cliente',
     location:  'Sagunto, Comunidad Valenciana · España',
     summary:
-        'Más de 9 años de trayectoria en administración, atención al cliente ' +
-        'y operaciones. Perfil polivalente, orientado a resultados y con ' +
-        'rápida adaptación a entornos multiculturales.',
+        'Más de 9 años en administración, atención al cliente y operaciones. ' +
+        'Perfil polivalente, orientado a resultados, con rápida adaptación a ' +
+        'entornos multiculturales. Permiso de trabajo en vigor, disponibilidad inmediata.',
   },
 
   contact: [
@@ -84,15 +84,10 @@ export const CV_DATA = {
     { name: 'Atención al cliente',    pct: 95 },
     { name: 'Gestión administrativa', pct: 92 },
     { name: 'Facturación / Cartera',  pct: 88 },
-    { name: 'Excel / Google Sheets',  pct: 85 },
-    { name: 'Google Drive',           pct: 83 },
+    { name: 'Ofimática (Office & Google Workspace)', pct: 85 },
     { name: 'Hostelería / TPV',       pct: 80 },
   ],
 
-  languages: [
-    { code: 'ES', label: 'Nativo', muted: false },
-    { code: 'EN', label: 'Básico', muted: true  },
-  ],
 
   education: [
     {
@@ -110,6 +105,13 @@ export const CV_DATA = {
 
   certifications: [
     {
+      name:      'Manipulador de Alimentos',
+      issuer:    'Coformación',
+      period:    'May 2026 · 10 h',
+      tags:      ['Higiene alimentaria', 'Hostelería'],
+      pdfExport: ['CERT_MANIPULADOR', 'DIPLOMA_MANIPULADOR'],
+    },
+    {
       name:      'Principios del Community Manager',
       issuer:    'Generalitat Valenciana · Adecco',
       period:    'Abr 2026 · 25 h',
@@ -125,7 +127,4 @@ export const CV_DATA = {
     },
   ],
 
-  profileNote:
-      'Permiso de trabajo en vigor. Orientada al detalle, proactiva y con ' +
-      'fuerte ética de trabajo. Disponibilidad inmediata.',
 };

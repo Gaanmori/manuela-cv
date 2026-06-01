@@ -284,20 +284,26 @@ export function renderCertificationsCard(certifications) {
 
     // Name — clickable if a PDF is available
     if (pdfSrc) {
+      const openPdf = (src) => {
+        const byteStr = atob(src.split(',')[1]);
+        const bytes   = new Uint8Array(byteStr.length);
+        for (let i = 0; i < byteStr.length; i++) bytes[i] = byteStr.charCodeAt(i);
+        const blob    = new Blob([bytes], { type: 'application/pdf' });
+        const blobUrl = URL.createObjectURL(blob);
+        window.open(blobUrl, '_blank', 'noopener');
+        setTimeout(() => URL.revokeObjectURL(blobUrl), 10_000);
+      };
+
       const btn = el('button', ['cert-item__name', 'cert-item__name--link']);
       btn.textContent = name;
       btn.title       = `Ver diploma: ${name}`;
       btn.setAttribute('aria-label', `Abrir diploma de ${name}`);
       btn.addEventListener('click', () => {
-        // Convert data URI to a Blob URL so the browser opens it as a PDF
-        const byteStr  = atob(pdfSrc.split(',')[1]);
-        const bytes    = new Uint8Array(byteStr.length);
-        for (let i = 0; i < byteStr.length; i++) bytes[i] = byteStr.charCodeAt(i);
-        const blob     = new Blob([bytes], { type: 'application/pdf' });
-        const blobUrl  = URL.createObjectURL(blob);
-        window.open(blobUrl, '_blank', 'noopener');
-        // Revoke after a short delay to free memory once the tab has loaded
-        setTimeout(() => URL.revokeObjectURL(blobUrl), 10_000);
+        if (Array.isArray(pdfSrc)) {
+          pdfSrc.forEach(src => { if (src) openPdf(src); });
+        } else {
+          openPdf(pdfSrc);
+        }
       });
       item.appendChild(btn);
     } else {
@@ -314,17 +320,4 @@ export function renderCertificationsCard(certifications) {
   return card;
 }
 
-/**
- * Renders the profile note card.
- * @param {string} note
- * @returns {HTMLElement}
- */
-export function renderProfileCard(note) {
-  const card = el('div', ['sidebar-card']);
-  const h2   = el('h2', ['section-label']);
-  h2.textContent = 'Perfil';
 
-  const p = el('p', ['profile-note'], esc(note));
-  card.append(h2, p);
-  return card;
-}
