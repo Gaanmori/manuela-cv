@@ -27,6 +27,7 @@ export const CV_DATA = {
     { label: 'Teléfono', href: 'tel:614088475',                               display: '614 088 475',                    icon: 'phone'    },
     { label: 'Email',    href: 'mailto:mecheverrypineda@gmail.com',            display: 'mecheverrypineda@gmail.com',     icon: 'email'    },
     { label: 'LinkedIn', href: 'https://www.linkedin.com/in/manu-echeverry/', display: 'linkedin.com/in/manu-echeverry', icon: 'linkedin' },
+    { label: 'CV Online', href: 'https://gaanmori.github.io/manuela-cv/', display: 'gaanmori.github.io/manuela-cv', icon: 'cv' },
   ],
 
   experience: [
