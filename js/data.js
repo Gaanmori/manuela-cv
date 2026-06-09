@@ -49,7 +49,7 @@ export const CV_DATA = {
     },
     {
       year:    '2021',
-      period:  "Jun – Oct '25",
+      period:  "Jun '21 – Oct '25",
       role:    'Auxiliar Administrativa',
       company: 'Hy Cite — Medellín, Colombia',
       desc:    'Seguimiento de cartera, conciliaciones y reportes financieros. Coordinación con el área comercial y gestión documental. Logro: reducción de tiempos en conciliación mediante optimización de procesos.',
@@ -65,7 +65,7 @@ export const CV_DATA = {
     },
     {
       year:    '2017',
-      period:  "Abr – Abr '21",
+      period:  "Abr '17 – Abr '21",
       role:    'Auxiliar Administrativo',
       company: 'Movistar — Cartagena de Indias, Colombia',
       desc:    'Gestión documental, conciliación de ventas diarias y control de inventarios. Coordinación operativa entre áreas para la entrega de productos y servicios. Logro: mejora en organización documental que redujo tiempos de gestión.',
@@ -73,7 +73,7 @@ export const CV_DATA = {
     },
     {
       year:    '2015',
-      period:  "Oct – Abr '17",
+      period:  "Oct '15 – Abr '17",
       role:    'Auxiliar de Operaciones',
       company: 'Movistar — Cartagena de Indias, Colombia',
       desc:    'Control de inventarios, gestión de activaciones y portabilidades, apoyo en caja y resolución de incidencias operativas.',
@@ -100,7 +100,7 @@ export const CV_DATA = {
     {
       degree: 'Lingüística y Literatura',
       school: 'Universidad de Cartagena · Colombia',
-      period: '2016 – 2025',
+      period: '2025',
     },
   ],
 
