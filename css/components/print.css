@@ -62,7 +62,7 @@
 
     .header__photo-img {
         width: 75px !important;
-        height: 75px !important;
+        height: 100px !important;
         border: 2px solid #d9c9ad !important;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
