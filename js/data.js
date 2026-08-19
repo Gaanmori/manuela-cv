@@ -128,4 +128,19 @@ export const CV_DATA = {
     },
   ],
 
+  drivingLicenses: [
+    {
+      type:       'B',
+      label:      'Permiso B — Coche',
+      issued:     '12/08/2026',
+      expires:    '12/08/2036',
+    },
+    {
+      type:       'A2',
+      label:      'Permiso A2 — Moto',
+      issued:     '12/08/2026',
+      expires:    '12/08/2036',
+    },
+  ],
+
 };

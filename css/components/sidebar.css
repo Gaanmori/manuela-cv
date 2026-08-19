@@ -227,6 +227,53 @@
   line-height: var(--leading-normal);
 }
 
+/* ── Driving licenses grid ─────────────────────────────────── */
+.license-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.license-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.license-item__circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid var(--color-terracota);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-weight: var(--weight-bold);
+  color: var(--color-terracota);
+  background: var(--color-cream);
+  flex-shrink: 0;
+}
+
+.license-item__info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.license-item__label {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--color-brown);
+}
+
+.license-item__dates {
+  font-size: 0.65rem;
+  color: var(--color-muted);
+  letter-spacing: 0.02em;
+}
+
 /* ── Print ────────────────────────────────────────────────── */
 @media print {
   .sidebar { animation: none !important; }

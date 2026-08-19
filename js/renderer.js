@@ -320,4 +320,30 @@ export function renderCertificationsCard(certifications) {
   return card;
 }
 
+/**
+ * Renders the driving licenses card.
+ * @param {Array<{type,label,issued,expires}>} licenses
+ * @returns {HTMLElement}
+ */
+export function renderLicensesCard(licenses) {
+  const card = el('div', ['sidebar-card']);
+  const h2   = el('h2', ['section-label']);
+  h2.textContent = 'Permisos de Conducir';
+  card.appendChild(h2);
+
+  const grid = el('div', ['license-grid']);
+  licenses.forEach(({ type, label, issued, expires }) => {
+    const item = el('div', ['license-item'],
+        `<div class="license-item__circle" aria-label="${esc(type)}">${esc(type)}</div>
+         <div class="license-item__info">
+           <span class="license-item__label">${esc(label)}</span>
+           <span class="license-item__dates">Exp: ${esc(issued)} · Cad: ${esc(expires)}</span>
+         </div>`);
+    grid.appendChild(item);
+  });
+
+  card.appendChild(grid);
+  return card;
+}
+
 

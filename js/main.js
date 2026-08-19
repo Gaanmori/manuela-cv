@@ -25,6 +25,7 @@ import {
   renderSkillsCard,
   renderEducationCard,
   renderCertificationsCard,
+  renderLicensesCard,
 }                             from './renderer.js';
 
 /* ── Photo source (inlined from assets/photo.js) ─────────── */
@@ -53,7 +54,7 @@ const CERT_MAP = {
  * Called once the DOM is ready.
  */
 function mount() {
-  const { person, contact, experience, skills, education, certifications } = CV_DATA;
+  const { person, contact, experience, skills, education, certifications, drivingLicenses } = CV_DATA;
 
   /* Header */
   const headerLeft = document.querySelector('.header__left');
@@ -100,6 +101,7 @@ function mount() {
       renderSkillsCard(skills),
       renderEducationCard(eduWithPdf),
       renderCertificationsCard(certsWithPdf),
+      renderLicensesCard(drivingLicenses),
     ];
     sidebarItems.forEach(node => sidebarEl.appendChild(node));
   }
