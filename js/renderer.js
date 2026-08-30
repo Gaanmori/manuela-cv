@@ -323,9 +323,10 @@ export function renderCertificationsCard(certifications) {
 /**
  * Renders the driving licenses card.
  * @param {Array<{type,label,issued,expires}>} licenses
+ * @param {string} [mobilityNote]
  * @returns {HTMLElement}
  */
-export function renderLicensesCard(licenses) {
+export function renderLicensesCard(licenses, mobilityNote) {
   const card = el('div', ['sidebar-card']);
   const h2   = el('h2', ['section-label']);
   h2.textContent = 'Permisos de Conducir';
@@ -343,6 +344,11 @@ export function renderLicensesCard(licenses) {
   });
 
   card.appendChild(grid);
+
+  if (mobilityNote) {
+    card.appendChild(el('p', ['license-mobility-note'], esc(mobilityNote)));
+  }
+
   return card;
 }
 

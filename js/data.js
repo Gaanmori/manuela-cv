@@ -143,4 +143,6 @@ export const CV_DATA = {
     },
   ],
 
+  mobilityNote: 'Vehículo propio · Disponibilidad para desplazarse sin depender del transporte público.',
+
 };

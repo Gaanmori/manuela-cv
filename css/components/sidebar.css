@@ -274,6 +274,15 @@
   letter-spacing: 0.02em;
 }
 
+.license-mobility-note {
+  margin-top: var(--space-4);
+  padding-top: var(--space-4);
+  border-top: var(--border-line);
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+  line-height: var(--leading-normal);
+}
+
 /* ── Print ────────────────────────────────────────────────── */
 @media print {
   .sidebar { animation: none !important; }
