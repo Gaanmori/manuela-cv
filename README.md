@@ -8,6 +8,12 @@ Este proyecto es una hoja de vida (CV) profesional diseñada como una aplicació
 * **CSS3 (Post-moderno):** Uso intensivo de Variables CSS (Tokens), Grid Layout, Flexbox y animaciones `keyframes`.
 * **JavaScript (ES6+):** Arquitectura modular (Módulos de ES) para la renderización dinámica del DOM.
 
+## ✨ Funcionalidades
+
+* **Visor de diplomas y certificados:** al hacer clic sobre un título de Formación o Certificación con PDF asociado, se abre el diploma (embebido en Base64 en `js/assets/`) en una pestaña nueva.
+* **Exportación a PDF en una sola hoja:** `css/components/print.css` optimiza el diseño para impresión/`Ctrl+P`, ajustando tamaños y evitando saltos de página en tarjetas y entradas de experiencia, todo en tamaño Letter.
+* **Permisos de Conducir y movilidad:** tarjeta con las licencias de conducir (A2, B) y una nota de disponibilidad de vehículo propio, sin depender del transporte público.
+
 ## 📂 Estructura del Proyecto
 
 ```text
