@@ -23,5 +23,10 @@ Este proyecto es una hoja de vida (CV) profesional diseñada como una aplicació
 │   ├── renderer.js      # Lógica de construcción de elementos HTML.
 │   ├── icons.js         # Diccionario de iconos SVG.
 │   └── assets/
-│       └── photo.js     # Fotografía de perfil en formato Base64.
+│       ├── photo.js                 # Fotografía de perfil en formato Base64.
+│       ├── cert-ia.js                # Certificado (IA) en formato Base64.
+│       ├── cert-community-manager.js # Certificado (Community Manager) en formato Base64.
+│       ├── cert-manipulador.js       # Certificado de manipulación de alimentos en formato Base64.
+│       ├── diploma-colegio.js        # Diploma de bachillerato en formato Base64.
+│       └── diploma-manipulador.js    # Diploma de manipulación de alimentos en formato Base64.
 └── index.html           # Esqueleto de la página.
