@@ -33,7 +33,7 @@ export const CV_DATA = {
   experience: [
     {
       year:    '2026',
-      period:  'Mayo · Presente',
+      period:  "May '26 – Presente",
       role:    'Auxiliar de Hostelería — Sala y Caja',
       company: "Restaurante Arrocería CA' RAFA — Canet d'en Berenguer, España",
       desc:    'Gestión de caja y TPV, recepción de comensales, organización de sala y coordinación de pedidos take away. Apoyo operativo durante horas punta.',
@@ -41,7 +41,7 @@ export const CV_DATA = {
     },
     {
       year:    '2026',
-      period:  'Ene – Abr',
+      period:  "Ene '26 – Abr '26",
       role:    'Auxiliar de Hostelería',
       company: 'Cafetería El Encuentro — Sagunto, España',
       desc:    'Servicio de barra y sala, elaboración de cafés y carta corta. Gestión de caja en entornos de alto volumen.',
@@ -57,7 +57,7 @@ export const CV_DATA = {
     },
     {
       year:    '2021',
-      period:  'Abr – Jun',
+      period:  "Abr '21 – Jun '21",
       role:    'Agente de Telemarketing',
       company: 'Hy Cite — Cartagena de Indias, Colombia',
       desc:    'Contacto outbound para presentación de productos Royal Prestige y agendamiento de citas comerciales. Superación constante de metas de conversión.',
