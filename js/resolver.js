@@ -48,6 +48,19 @@ function pick(master, selection, listName) {
 }
 
 /**
+ * Contact items flagged `versioned` link to this exact version
+ * (`?v=<id>`), so each CV points to its own web copy.
+ * @param {Array<object>} contacts
+ * @param {string}        versionId
+ * @returns {Array<object>}
+ */
+function resolveContacts(contacts, versionId) {
+  return contacts.map(c => c.versioned
+    ? { ...c, href: `${c.href}?v=${versionId}`, display: `${c.display}?v=${versionId}` }
+    : c);
+}
+
+/**
  * Builds the data to render for one version.
  *
  * @param {object} data       master data
@@ -58,6 +71,8 @@ export function buildView(data, versionId) {
   const v = VERSIONS[versionId];
   return {
     ...data,
+    theme:   v.theme ?? versionId,
+    contact: resolveContacts(data.contact, versionId),
     person: {
       ...data.person,
       tagline: v.tagline ?? data.person.tagline,

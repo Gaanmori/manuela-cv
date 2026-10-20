@@ -13,6 +13,9 @@
 /* 1 · Design tokens (variables, sin reglas) */
 @import './tokens.css';
 
+/* 1b · Paletas por versión (sobrescriben tokens) */
+@import './themes.css';
+
 /* 2 · Reset + reglas globales */
 @import './base.css';
 

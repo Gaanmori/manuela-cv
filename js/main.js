@@ -61,6 +61,7 @@ const CERT_MAP = {
 function mount() {
   const versionId = resolveVersionId(window.location.search);
   const view      = buildView(CV_DATA, versionId);
+  document.documentElement.dataset.theme = view.theme;
   document.title  = `${view.person.firstName} ${view.person.lastName} — CV`;
 
   const { person, contact, experience, skills, education, certifications, drivingLicenses, mobilityNote } = view;
@@ -110,7 +111,7 @@ function mount() {
       renderSkillsCard(skills),
       renderEducationCard(eduWithPdf),
       renderCertificationsCard(certsWithPdf),
-      renderLicensesCard(drivingLicenses, mobilityNote),
+      ...(drivingLicenses.length ? [renderLicensesCard(drivingLicenses, mobilityNote)] : []),
     ];
     sidebarItems.forEach(node => sidebarEl.appendChild(node));
   }

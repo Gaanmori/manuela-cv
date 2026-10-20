@@ -1,0 +1,99 @@
+/* ============================================================
+   themes.css — Paletas por versión del CV
+   Single Responsibility: recolorear el diseño sin tocar layout.
+   La versión activa se marca con <html data-theme="...">
+   (la pone main.js a partir del campo `theme` de versions.js).
+
+   "hosteleria" es la paleta base definida en tokens.css (terracota),
+   por eso no tiene bloque aquí. Para crear un tema nuevo: copiar un
+   bloque, cambiar los valores y referenciarlo desde versions.js.
+   Como print.css usa estas mismas variables, el PDF también cambia.
+   ============================================================ */
+
+/* Retail / Cajera — verde bosque */
+:root[data-theme='retail'] {
+  --color-cream:     #f6f9f7;
+  --color-warm:      #e4eee9;
+  --color-sand:      #c3d6cc;
+  --color-sand-dk:   #9db8ab;
+  --color-terracota: #2f7a5f;
+  --color-terra-lt:  #4a9b7d;
+  --color-brown:     #2d4a40;
+  --color-dark:      #10201a;
+  --color-muted:     #5f7a6f;
+  --color-line:      rgba(45, 74, 64, 0.15);
+  --color-line-strong: rgba(45, 74, 64, 0.2);
+  --color-tint:      #eaf3ee;
+  --color-track:     #d5e5dc;
+  --color-ink:       #0f2018;
+  --color-ink-mid:   #17302a;
+  --color-ink-soft:  #2a4036;
+  --color-ink-muted: #3f5a4e;
+  --shadow-photo:    0 4px 24px rgba(45, 74, 64, 0.18);
+}
+
+/* Administrativa — azul pizarra */
+:root[data-theme='administrativa'] {
+  --color-cream:     #f6f8fb;
+  --color-warm:      #e3eaf3;
+  --color-sand:      #c5d2e2;
+  --color-sand-dk:   #9fb2c9;
+  --color-terracota: #2f5d8a;
+  --color-terra-lt:  #4f7fae;
+  --color-brown:     #26384d;
+  --color-dark:      #101824;
+  --color-muted:     #5f7185;
+  --color-line:      rgba(38, 56, 77, 0.15);
+  --color-line-strong: rgba(38, 56, 77, 0.2);
+  --color-tint:      #eaf0f7;
+  --color-track:     #d6e0ec;
+  --color-ink:       #0f1824;
+  --color-ink-mid:   #182638;
+  --color-ink-soft:  #2a3a4e;
+  --color-ink-muted: #44566b;
+  --shadow-photo:    0 4px 24px rgba(38, 56, 77, 0.18);
+}
+
+/* Atención al cliente — ciruela */
+:root[data-theme='atencion-cliente'] {
+  --color-cream:     #fbf7fa;
+  --color-warm:      #f0e4ec;
+  --color-sand:      #dcc5d3;
+  --color-sand-dk:   #bd9fb1;
+  --color-terracota: #8a3f6b;
+  --color-terra-lt:  #a85b88;
+  --color-brown:     #4a2a41;
+  --color-dark:      #1e1019;
+  --color-muted:     #7d6073;
+  --color-line:      rgba(74, 42, 65, 0.15);
+  --color-line-strong: rgba(74, 42, 65, 0.2);
+  --color-tint:      #f4eaf0;
+  --color-track:     #e6d3de;
+  --color-ink:       #1a0f16;
+  --color-ink-mid:   #2a1624;
+  --color-ink-soft:  #3d2635;
+  --color-ink-muted: #5a4153;
+  --shadow-photo:    0 4px 24px rgba(74, 42, 65, 0.18);
+}
+
+/* Completa — grafito */
+:root[data-theme='completa'] {
+  --color-cream:     #f8f8f7;
+  --color-warm:      #ebebe8;
+  --color-sand:      #d0d0cb;
+  --color-sand-dk:   #a9a9a3;
+  --color-terracota: #4f5560;
+  --color-terra-lt:  #6f7682;
+  --color-brown:     #2e3238;
+  --color-dark:      #16181b;
+  --color-muted:     #6b6f75;
+  --color-line:      rgba(46, 50, 56, 0.15);
+  --color-line-strong: rgba(46, 50, 56, 0.2);
+  --color-tint:      #f0f0ee;
+  --color-track:     #dcdcd8;
+  --color-ink:       #15171a;
+  --color-ink-mid:   #202328;
+  --color-ink-soft:  #33373d;
+  --color-ink-muted: #4d5158;
+  --shadow-photo:    0 4px 24px rgba(46, 50, 56, 0.18);
+}

@@ -28,7 +28,7 @@
     /* ── 3. Fondo y textura ─────────────────────────────────── */
     body {
         background: #fff !important;
-        color: #1a1008 !important;
+        color: var(--color-ink) !important;
         font-size: 8.5pt;
         line-height: 1.4;
     }
@@ -52,7 +52,7 @@
     .header {
         padding: 4mm 0 4mm !important;
         gap: 4mm !important;
-        border-bottom: 1.5px solid #b5633a !important;
+        border-bottom: 1.5px solid var(--color-terracota) !important;
         grid-template-columns: auto 1fr auto !important;
     }
 
@@ -63,7 +63,7 @@
     .header__photo-img {
         width: 70px !important;
         height: 93px !important;
-        border: 2px solid #d9c9ad !important;
+        border: 2px solid var(--color-sand) !important;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
     }
@@ -91,7 +91,7 @@
 
     .header__contact-link {
         font-size: 7pt !important;
-        color: #3a2010 !important;
+        color: var(--color-ink-soft) !important;
     }
 
     /* Ocultar href en impresión — el texto ya es legible */
@@ -103,7 +103,7 @@
     .quote-strip {
         background: transparent !important;
         border: none !important;
-        border-left: 3px solid #b5633a !important;
+        border-left: 3px solid var(--color-terracota) !important;
         border-radius: 0 !important;
         padding: 3px 8px !important;
         margin-top: 3mm !important;
@@ -114,7 +114,7 @@
     }
 
     .quote-strip__mark {
-        color: #b5633a !important;
+        color: var(--color-terracota) !important;
         font-size: 2rem !important;
         line-height: 0.5 !important;
         -webkit-print-color-adjust: exact;
@@ -122,7 +122,7 @@
     }
 
     .quote-strip__text {
-        color: #2a1a0a !important;
+        color: var(--color-ink-mid) !important;
         font-size: 8pt !important;
         line-height: 1.4 !important;
     }
@@ -143,13 +143,13 @@
     .section-label {
         font-size: 12pt !important;
         margin-bottom: 8px !important;
-        color: #b5633a !important;
+        color: var(--color-terracota) !important;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
     }
 
     .section-label::after {
-        background: #b5633a !important;
+        background: var(--color-terracota) !important;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
     }
@@ -165,7 +165,7 @@
         page-break-inside: avoid !important;
         margin-bottom: 8px !important;
         padding-bottom: 8px !important;
-        border-bottom-color: rgba(92, 61, 46, 0.2) !important;
+        border-bottom-color: var(--color-line-strong) !important;
     }
 
     .exp-item:last-child {
@@ -175,7 +175,7 @@
 
     .exp-item__year {
         font-size: 10pt !important;
-        color: #c0a882 !important;
+        color: var(--color-sand-dk) !important;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
     }
@@ -190,14 +190,14 @@
 
     .exp-item__company {
         font-size: 6.5pt !important;
-        color: #b5633a !important;
+        color: var(--color-terracota) !important;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
     }
 
     .exp-item__desc {
         font-size: 7pt !important;
-        color: #3a2a1a !important;
+        color: var(--color-ink-soft) !important;
         line-height: 1.4 !important;
     }
 
@@ -209,8 +209,8 @@
     .tag {
         font-size: 5.5pt !important;
         padding: 1px 4px !important;
-        border-color: #c0a882 !important;
-        color: #3a2a1a !important;
+        border-color: var(--color-sand-dk) !important;
+        color: var(--color-ink-soft) !important;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
     }
@@ -223,8 +223,8 @@
     .sidebar-card {
         break-inside: avoid !important;
         page-break-inside: avoid !important;
-        background: #f5ede0 !important;
-        border-color: rgba(92, 61, 46, 0.15) !important;
+        background: var(--color-tint) !important;
+        border-color: var(--color-line) !important;
         padding: 6px 8px !important;
         margin-bottom: 4px !important;
         border-radius: 6px !important;
@@ -249,13 +249,13 @@
 
     .skill-bar {
         height: 2.5px !important;
-        background: #e8dcc8 !important;
+        background: var(--color-track) !important;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
     }
 
     .skill-bar__fill {
-        background: #b5633a !important;
+        background: var(--color-terracota) !important;
         transform: scaleX(1) !important;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
@@ -270,8 +270,8 @@
         width: 32px !important;
         height: 32px !important;
         font-size: 7pt !important;
-        border-color: #d9c9ad !important;
-        background: #faf7f2 !important;
+        border-color: var(--color-sand) !important;
+        background: var(--color-cream) !important;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
     }
@@ -295,14 +295,14 @@
     /* Los botones clickeables se ven como texto en impresión */
     .cert-item__name--link {
         text-decoration: none !important;
-        color: #5c3d2e !important;
+        color: var(--color-brown) !important;
         cursor: default !important;
     }
 
     .edu-item__school,
     .cert-item__issuer {
         font-size: 5.5pt !important;
-        color: #b5633a !important;
+        color: var(--color-terracota) !important;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
     }
@@ -333,7 +333,7 @@
     .profile-note {
         font-size: 7pt !important;
         line-height: 1.5 !important;
-        color: #5a4030 !important;
+        color: var(--color-ink-muted) !important;
     }
 
     /* ── 14b. Permisos de conducir ─────────────────────────── */
@@ -349,8 +349,8 @@
         width: 28px !important;
         height: 28px !important;
         font-size: 7pt !important;
-        border-color: #b5633a !important;
-        background: #faf7f2 !important;
+        border-color: var(--color-terracota) !important;
+        background: var(--color-cream) !important;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
     }
