@@ -16,6 +16,8 @@
 'use strict';
 
 import { CV_DATA }            from './data.js';
+import { VERSIONS }           from './versions.js';
+import { resolveVersionId, buildView } from './resolver.js';
 import {
   renderPhoto,
   renderNameBlock,
@@ -26,6 +28,7 @@ import {
   renderEducationCard,
   renderCertificationsCard,
   renderLicensesCard,
+  renderVersionSwitcher,
 }                             from './renderer.js';
 
 /* ── Photo source (inlined from assets/photo.js) ─────────── */
@@ -37,6 +40,8 @@ import { CERT_IA }                from './assets/cert-ia.js';
 import { DIPLOMA_COLEGIO }        from './assets/diploma-colegio.js';
 import { CERT_MANIPULADOR }       from './assets/cert-manipulador.js';
 import { DIPLOMA_MANIPULADOR }    from './assets/diploma-manipulador.js';
+import { CERT_MANIPULADOR_SUPER } from './assets/cert-manipulador-supermercados.js';
+import { CERT_CAJERO_SUPER }      from './assets/cert-cajero-supermercado.js';
 
 /** Maps pdfExport keys in data.js to their base64 data URIs. */
 const CERT_MAP = {
@@ -45,6 +50,8 @@ const CERT_MAP = {
   DIPLOMA_COLEGIO,
   CERT_MANIPULADOR,
   DIPLOMA_MANIPULADOR,
+  CERT_MANIPULADOR_SUPER,
+  CERT_CAJERO_SUPER,
 };
 
 /* ── Mount ────────────────────────────────────────────────── */
@@ -54,7 +61,15 @@ const CERT_MAP = {
  * Called once the DOM is ready.
  */
 function mount() {
-  const { person, contact, experience, skills, education, certifications, drivingLicenses, mobilityNote } = CV_DATA;
+  const versionId = resolveVersionId(window.location.search);
+  const view      = buildView(CV_DATA, versionId);
+  document.title  = `${view.person.firstName} ${view.person.lastName} — CV`;
+
+  const { person, contact, experience, skills, education, certifications, drivingLicenses, mobilityNote } = view;
+
+  /* Version switcher (screen only) */
+  const pageEl = document.querySelector('.page');
+  if (pageEl) pageEl.prepend(renderVersionSwitcher(VERSIONS, versionId));
 
   /* Header */
   const headerLeft = document.querySelector('.header__left');

@@ -24,6 +24,7 @@
 @import './components/quote.css';
 @import './components/experience.css';
 @import './components/sidebar.css';
+@import './components/switcher.css';
 
 /* 5 · Impresión — siempre el último, mayor prioridad en print */
 @import './components/print.css';

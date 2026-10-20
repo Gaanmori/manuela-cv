@@ -1,9 +1,12 @@
 /**
  * data.js — CV Data Module
  *
- * Single Responsibility: owns the raw CV data.
- * Nothing renders here; nothing fetches here.
- * To update the CV, edit only this file.
+ * Single Responsibility: owns the MASTER CV data (everything Manuela
+ * has studied and worked on). Nothing renders here; nothing fetches here.
+ *
+ * Every list item has a stable `id`. Versions (js/versions.js) pick and
+ * order items by id, so a new job/course is written once, here, and then
+ * referenced from whichever versions should show it.
  *
  * @module data
  */
@@ -32,6 +35,7 @@ export const CV_DATA = {
 
   experience: [
     {
+      id:      'rafa',
       year:    '2026',
       period:  "May '26 – Presente",
       role:    'Auxiliar de Hostelería — Sala y Caja',
@@ -40,6 +44,7 @@ export const CV_DATA = {
       tags:    ['TPV / Caja', 'Take Away', 'Atención al cliente'],
     },
     {
+      id:      'encuentro',
       year:    '2026',
       period:  "Ene '26 – Abr '26",
       role:    'Auxiliar de Hostelería',
@@ -48,6 +53,7 @@ export const CV_DATA = {
       tags:    ['Barra', 'Alto volumen', 'Caja'],
     },
     {
+      id:      'hycite-admin',
       year:    '2021',
       period:  "Jun '21 – Oct '25",
       role:    'Auxiliar Administrativa',
@@ -56,6 +62,7 @@ export const CV_DATA = {
       tags:    ['Cartera', 'Excel', 'Facturación', 'Reportes'],
     },
     {
+      id:      'hycite-tele',
       year:    '2021',
       period:  "Abr '21 – Jun '21",
       role:    'Agente de Telemarketing',
@@ -64,6 +71,7 @@ export const CV_DATA = {
       tags:    ['Outbound', 'CRM', 'Conversión'],
     },
     {
+      id:      'movistar-admin',
       year:    '2017',
       period:  "Abr '17 – Abr '21",
       role:    'Auxiliar Administrativo',
@@ -72,6 +80,7 @@ export const CV_DATA = {
       tags:    ['Inventarios', 'Caja / Conciliación', 'Portabilidades'],
     },
     {
+      id:      'movistar-ops',
       year:    '2015',
       period:  "Oct '15 – Abr '17",
       role:    'Auxiliar de Operaciones',
@@ -82,22 +91,24 @@ export const CV_DATA = {
   ],
 
   skills: [
-    { name: 'Atención al cliente',    pct: 95 },
-    { name: 'Gestión administrativa', pct: 92 },
-    { name: 'Facturación / Cartera',  pct: 88 },
-    { name: 'Ofimática (Office & Google Workspace)', pct: 85 },
-    { name: 'Hostelería / TPV',       pct: 80 },
+    { id: 'atencion', name: 'Atención al cliente',    pct: 95 },
+    { id: 'admin', name: 'Gestión administrativa', pct: 92 },
+    { id: 'facturacion', name: 'Facturación / Cartera',  pct: 88 },
+    { id: 'ofimatica', name: 'Ofimática (Office & Google Workspace)', pct: 85 },
+    { id: 'hosteleria', name: 'Hostelería / TPV',       pct: 80 },
   ],
 
 
   education: [
     {
+      id:        'bachillerato',
       degree:    'Bachillerato · Educación Media (homologado)',
       school:    'Gimnasio Cervantes de Cartagena · Colombia',
       period:    '2015',
       pdfExport: 'DIPLOMA_COLEGIO',
     },
     {
+      id:        'linguistica',
       degree: 'Lingüística y Literatura',
       school: 'Universidad de Cartagena · Colombia',
       period: '2025',
@@ -106,6 +117,23 @@ export const CV_DATA = {
 
   certifications: [
     {
+      id:        'cajero-super',
+      name:      'Cajero/a de Supermercado',
+      issuer:    'AESCO ONG',
+      period:    'Oct 2026 · 20 h',
+      tags:      ['Caja registradora', 'Cobros', 'Facturación'],
+      pdfExport: 'CERT_CAJERO_SUPER',
+    },
+    {
+      id:        'manipulador-super',
+      name:      'Manipulador/a de Alimentos para Supermercados',
+      issuer:    'AESCO ONG',
+      period:    'Oct 2026 · 4 h',
+      tags:      ['Higiene alimentaria', 'Retail'],
+      pdfExport: 'CERT_MANIPULADOR_SUPER',
+    },
+    {
+      id:        'manipulador',
       name:      'Manipulador de Alimentos',
       issuer:    'Coformación',
       period:    'May 2026 · 10 h',
@@ -113,6 +141,7 @@ export const CV_DATA = {
       pdfExport: ['CERT_MANIPULADOR', 'DIPLOMA_MANIPULADOR'],
     },
     {
+      id:        'community-manager',
       name:      'Principios del Community Manager',
       issuer:    'Generalitat Valenciana · Adecco',
       period:    'Abr 2026 · 25 h',
@@ -120,6 +149,7 @@ export const CV_DATA = {
       pdfExport: 'CERT_COMMUNITY_MANAGER',
     },
     {
+      id:        'ia',
       name:      'Introducción a la Inteligencia Artificial',
       issuer:    'Generalitat Valenciana · Adecco',
       period:    'Mar 2026 · 25 h',

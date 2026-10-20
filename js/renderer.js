@@ -353,3 +353,23 @@ export function renderLicensesCard(licenses, mobilityNote) {
 }
 
 
+
+/**
+ * Renders the on-screen version switcher (hidden when printing).
+ * Links keep the page static: each one just sets `?v=<id>`.
+ * @param {Record<string,{label:string}>} versions
+ * @param {string} activeId
+ * @returns {HTMLElement}
+ */
+export function renderVersionSwitcher(versions, activeId) {
+  const nav = el('nav', ['version-switcher']);
+  nav.setAttribute('aria-label', 'Versiones de la hoja de vida');
+
+  Object.entries(versions).forEach(([id, { label }]) => {
+    const a = el('a', ['version-switcher__link'], esc(label));
+    a.href = `?v=${encodeURIComponent(id)}`;
+    if (id === activeId) a.setAttribute('aria-current', 'page');
+    nav.appendChild(a);
+  });
+  return nav;
+}
