@@ -40,6 +40,7 @@ import { CERT_MANIPULADOR }       from './assets/cert-manipulador.js';
 import { DIPLOMA_MANIPULADOR }    from './assets/diploma-manipulador.js';
 import { CERT_MANIPULADOR_SUPER } from './assets/cert-manipulador-supermercados.js';
 import { CERT_CAJERO_SUPER }      from './assets/cert-cajero-supermercado.js';
+import { CERT_REPONEDOR_SUPER }   from './assets/cert-reponedor-supermercado.js';
 
 /** Maps pdfExport keys in data.js to their base64 data URIs. */
 const CERT_MAP = {
@@ -50,6 +51,7 @@ const CERT_MAP = {
   DIPLOMA_MANIPULADOR,
   CERT_MANIPULADOR_SUPER,
   CERT_CAJERO_SUPER,
+  CERT_REPONEDOR_SUPER,
 };
 
 /* ── Mount ────────────────────────────────────────────────── */

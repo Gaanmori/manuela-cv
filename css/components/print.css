@@ -61,26 +61,26 @@
     }
 
     .header__photo-img {
-        width: 70px !important;
-        height: 93px !important;
+        width: 78px !important;
+        height: 104px !important;
         border: 2px solid var(--color-sand) !important;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
     }
 
     .header__title {
-        font-size: 18pt !important;
+        font-size: 21pt !important;
         line-height: 1.05 !important;
     }
 
     .header__tagline {
-        font-size: 6pt !important;
+        font-size: 7.5pt !important;
         letter-spacing: 0.12em !important;
         margin-top: 3px !important;
     }
 
     .header__location {
-        font-size: 5.5pt !important;
+        font-size: 7pt !important;
         padding: 2px 6px !important;
         margin-top: 4px !important;
     }
@@ -90,7 +90,7 @@
     }
 
     .header__contact-link {
-        font-size: 7pt !important;
+        font-size: 8.5pt !important;
         color: var(--color-ink-soft) !important;
     }
 
@@ -123,15 +123,15 @@
 
     .quote-strip__text {
         color: var(--color-ink-mid) !important;
-        font-size: 8pt !important;
+        font-size: 9pt !important;
         line-height: 1.4 !important;
     }
 
     /* ── 7. Grid de contenido — mantener 2 columnas en Letter── */
     .content-grid {
         display: grid !important;
-        grid-template-columns: 1fr 165px !important;
-        gap: 0 20px !important;
+        grid-template-columns: 1fr 195px !important;
+        gap: 0 22px !important;
         margin-top: 3mm !important;
     }
 
@@ -141,7 +141,7 @@
     }
 
     .section-label {
-        font-size: 12pt !important;
+        font-size: 13pt !important;
         margin-bottom: 8px !important;
         color: var(--color-terracota) !important;
         -webkit-print-color-adjust: exact;
@@ -163,8 +163,8 @@
     .exp-item {
         break-inside: avoid !important;
         page-break-inside: avoid !important;
-        margin-bottom: 8px !important;
-        padding-bottom: 8px !important;
+        margin-bottom: 10px !important;
+        padding-bottom: 10px !important;
         border-bottom-color: var(--color-line-strong) !important;
     }
 
@@ -174,31 +174,51 @@
     }
 
     .exp-item__year {
-        font-size: 10pt !important;
+        font-size: 11pt !important;
         color: var(--color-sand-dk) !important;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
     }
 
+    .exp-item {
+        grid-template-columns: 96px 1fr !important;
+        gap: 0 14px !important;
+    }
+
     .exp-item__date {
-        font-size: 6pt !important;
+        font-size: 7pt !important;
+        white-space: nowrap !important;
     }
 
     .exp-item__role {
-        font-size: 9pt !important;
+        font-size: 10.5pt !important;
     }
 
     .exp-item__company {
-        font-size: 6.5pt !important;
+        font-size: 7.5pt !important;
         color: var(--color-terracota) !important;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
     }
 
-    .exp-item__desc {
-        font-size: 7pt !important;
+    .exp-item__bullets {
+        margin: 3px 0 4px !important;
+    }
+
+    .exp-item__bullets li {
+        font-size: 8.5pt !important;
         color: var(--color-ink-soft) !important;
         line-height: 1.4 !important;
+        padding-left: 10px !important;
+    }
+
+    .exp-item__bullets li::before {
+        width: 3.5px !important;
+        height: 3.5px !important;
+        top: 0.55em !important;
+        background: var(--color-terracota) !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
     }
 
     .exp-item__tags {
@@ -207,7 +227,7 @@
     }
 
     .tag {
-        font-size: 5.5pt !important;
+        font-size: 7pt !important;
         padding: 1px 4px !important;
         border-color: var(--color-sand-dk) !important;
         color: var(--color-ink-soft) !important;
@@ -233,30 +253,20 @@
     }
 
     .sidebar-card .section-label {
-        font-size: 9pt !important;
+        font-size: 11pt !important;
         margin-bottom: 4px !important;
     }
 
-    /* ── 11. Barras de habilidades ──────────────────────────── */
+    /* ── 11. Habilidades (palabras clave) ───────────────────── */
+    .skill-list {
+        gap: 3px !important;
+    }
+
     .skill-list__item {
-        margin-bottom: 4px !important;
-        gap: 2px !important;
-    }
-
-    .skill-list__name {
-        font-size: 6.5pt !important;
-    }
-
-    .skill-bar {
-        height: 2.5px !important;
-        background: var(--color-track) !important;
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
-    }
-
-    .skill-bar__fill {
-        background: var(--color-terracota) !important;
-        transform: scaleX(1) !important;
+        font-size: 7.5pt !important;
+        padding: 1px 6px !important;
+        border-color: var(--color-sand-dk) !important;
+        color: var(--color-ink-soft) !important;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
     }
@@ -277,7 +287,7 @@
     }
 
     .lang-item__level {
-        font-size: 5.5pt !important;
+        font-size: 7pt !important;
     }
 
     /* ── 13. Educación y Formación ──────────────────────────── */
@@ -288,7 +298,7 @@
 
     .edu-item__degree,
     .cert-item__name {
-        font-size: 7.5pt !important;
+        font-size: 9pt !important;
         line-height: 1.2 !important;
     }
 
@@ -301,7 +311,7 @@
 
     .edu-item__school,
     .cert-item__issuer {
-        font-size: 5.5pt !important;
+        font-size: 7pt !important;
         color: var(--color-terracota) !important;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
@@ -309,7 +319,8 @@
 
     .edu-item__year,
     .cert-item__period {
-        font-size: 5.5pt !important;
+        font-size: 7pt !important;
+        color: var(--color-muted) !important;
     }
 
     .cert-item {
@@ -323,7 +334,7 @@
     }
 
     .cert-tag {
-        font-size: 5pt !important;
+        font-size: 6.5pt !important;
         padding: 1px 4px !important;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
@@ -331,7 +342,7 @@
 
     /* ── 14. Perfil ─────────────────────────────────────────── */
     .profile-note {
-        font-size: 7pt !important;
+        font-size: 8pt !important;
         line-height: 1.5 !important;
         color: var(--color-ink-muted) !important;
     }
@@ -356,17 +367,17 @@
     }
 
     .license-item__label {
-        font-size: 7pt !important;
+        font-size: 8.5pt !important;
     }
 
     .license-item__dates {
-        font-size: 5.5pt !important;
+        font-size: 7pt !important;
     }
 
     .license-mobility-note {
         margin-top: 4px !important;
         padding-top: 4px !important;
-        font-size: 6pt !important;
+        font-size: 7.5pt !important;
         line-height: 1.3 !important;
     }
 

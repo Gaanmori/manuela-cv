@@ -40,7 +40,11 @@ export const CV_DATA = {
       period:  "May '26 – Presente",
       role:    'Auxiliar de Hostelería — Sala y Caja',
       company: "Restaurante Arrocería CA' RAFA — Canet d'en Berenguer, España",
-      desc:    'Gestión de caja y TPV, recepción de comensales, organización de sala y coordinación de pedidos take away. Apoyo operativo durante horas punta.',
+      bullets: [
+        'Gestión de caja y TPV y recepción de comensales.',
+        'Organización de sala y coordinación de pedidos take away.',
+        'Apoyo operativo durante horas punta.',
+      ],
       tags:    ['TPV / Caja', 'Take Away', 'Atención al cliente'],
     },
     {
@@ -49,7 +53,10 @@ export const CV_DATA = {
       period:  "Ene '26 – Abr '26",
       role:    'Auxiliar de Hostelería',
       company: 'Cafetería El Encuentro — Sagunto, España',
-      desc:    'Servicio de barra y sala, elaboración de cafés y carta corta. Gestión de caja en entornos de alto volumen.',
+      bullets: [
+        'Servicio de barra y sala; elaboración de cafés y carta corta.',
+        'Gestión de caja en entornos de alto volumen.',
+      ],
       tags:    ['Barra', 'Alto volumen', 'Caja'],
     },
     {
@@ -58,7 +65,11 @@ export const CV_DATA = {
       period:  "Jun '21 – Oct '25",
       role:    'Auxiliar Administrativa',
       company: 'Hy Cite — Medellín, Colombia',
-      desc:    'Seguimiento de cartera, conciliaciones y reportes financieros. Coordinación con el área comercial y gestión documental. Logro: reducción de tiempos en conciliación mediante optimización de procesos.',
+      bullets: [
+        'Seguimiento de cartera, conciliaciones y reportes financieros.',
+        'Coordinación con el área comercial y gestión documental.',
+        'Logro: reducción de tiempos de conciliación mediante la optimización de procesos.',
+      ],
       tags:    ['Cartera', 'Excel', 'Facturación', 'Reportes'],
     },
     {
@@ -67,7 +78,10 @@ export const CV_DATA = {
       period:  "Abr '21 – Jun '21",
       role:    'Agente de Telemarketing',
       company: 'Hy Cite — Cartagena de Indias, Colombia',
-      desc:    'Contacto outbound para presentación de productos Royal Prestige y agendamiento de citas comerciales. Superación constante de metas de conversión.',
+      bullets: [
+        'Contacto outbound para presentar productos Royal Prestige y agendar citas comerciales.',
+        'Superación constante de las metas de conversión.',
+      ],
       tags:    ['Outbound', 'CRM', 'Conversión'],
     },
     {
@@ -76,7 +90,11 @@ export const CV_DATA = {
       period:  "Abr '17 – Abr '21",
       role:    'Auxiliar Administrativo',
       company: 'Movistar — Cartagena de Indias, Colombia',
-      desc:    'Gestión documental, conciliación de ventas diarias y control de inventarios. Coordinación operativa entre áreas para la entrega de productos y servicios. Logro: mejora en organización documental que redujo tiempos de gestión.',
+      bullets: [
+        'Gestión documental, conciliación de ventas diarias y control de inventarios.',
+        'Coordinación operativa entre áreas para la entrega de productos y servicios.',
+        'Logro: mejor organización documental, que redujo los tiempos de gestión.',
+      ],
       tags:    ['Inventarios', 'Caja / Conciliación', 'Portabilidades'],
     },
     {
@@ -85,17 +103,27 @@ export const CV_DATA = {
       period:  "Oct '15 – Abr '17",
       role:    'Auxiliar de Operaciones',
       company: 'Movistar — Cartagena de Indias, Colombia',
-      desc:    'Control de inventarios, gestión de activaciones y portabilidades, apoyo en caja y resolución de incidencias operativas.',
+      bullets: [
+        'Control de inventarios y gestión de activaciones y portabilidades.',
+        'Apoyo en caja y resolución de incidencias operativas.',
+      ],
       tags:    ['Operaciones', 'Activaciones', 'Soporte'],
     },
   ],
 
+  /** Palabras clave (sin porcentajes): cada versión elige cuáles mostrar. */
   skills: [
-    { id: 'atencion', name: 'Atención al cliente',    pct: 95 },
-    { id: 'admin', name: 'Gestión administrativa', pct: 92 },
-    { id: 'facturacion', name: 'Facturación / Cartera',  pct: 88 },
-    { id: 'ofimatica', name: 'Ofimática (Office & Google Workspace)', pct: 85 },
-    { id: 'hosteleria', name: 'Hostelería / TPV',       pct: 80 },
+    { id: 'atencion',     name: 'Atención al cliente' },
+    { id: 'caja',         name: 'Caja y TPV' },
+    { id: 'sala',         name: 'Servicio de sala y barra' },
+    { id: 'higiene',      name: 'Manipulación de alimentos' },
+    { id: 'reposicion',   name: 'Reposición y merchandising' },
+    { id: 'inventarios',  name: 'Control de inventarios' },
+    { id: 'admin',        name: 'Gestión administrativa' },
+    { id: 'facturacion',  name: 'Facturación y cartera' },
+    { id: 'conciliacion', name: 'Conciliaciones' },
+    { id: 'venta',        name: 'Venta telefónica' },
+    { id: 'ofimatica',    name: 'Office y Google Workspace' },
   ],
 
 
@@ -116,6 +144,14 @@ export const CV_DATA = {
   ],
 
   certifications: [
+    {
+      id:        'reponedor-super',
+      name:      'Reponedor/a de Supermercado',
+      issuer:    'AESCO ONG',
+      period:    'Sep 2026 · 20 h',
+      tags:      ['Reposición', 'Merchandising', 'Prevención de riesgos'],
+      pdfExport: 'CERT_REPONEDOR_SUPER',
+    },
     {
       id:        'cajero-super',
       name:      'Cajero/a de Supermercado',

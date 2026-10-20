@@ -22,49 +22,22 @@
   font-size: 1.3rem;
 }
 
-/* ── Skills list ──────────────────────────────────────────── */
+/* ── Skills (palabras clave, sin barras de porcentaje) ───── */
 .skill-list {
   list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
 }
 
 .skill-list__item {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  margin-bottom: var(--space-4);
-}
-
-.skill-list__item:last-child {
-  margin-bottom: 0;
-}
-
-.skill-list__name {
   font-size: var(--text-sm);
   font-weight: var(--weight-medium);
   color: var(--color-brown);
-  display: flex;
-  justify-content: space-between;
-}
-
-/* ── Skill bar ────────────────────────────────────────────── */
-.skill-bar {
-  height: 3px;
-  background: var(--color-sand);
-  border-radius: var(--radius-sm);
-  overflow: hidden;
-}
-
-.skill-bar__fill {
-  height: 100%;
-  background: linear-gradient(
-          90deg,
-          var(--color-terracota),
-          var(--color-terra-lt)
-  );
-  border-radius: var(--radius-sm);
-  transform-origin: left;
-  animation: barGrow var(--anim-bar-duration) var(--anim-bar-delay)
-  cubic-bezier(0.4, 0, 0.2, 1) both;
+  padding: 3px var(--space-3);
+  border: 1px solid var(--color-sand);
+  border-radius: var(--radius-full);
+  background: var(--color-cream);
 }
 
 /* ── Language grid ────────────────────────────────────────── */
@@ -135,7 +108,7 @@
 
 .edu-item__year {
   font-size: 0.7rem;
-  color: var(--color-sand);
+  color: var(--color-muted);
   font-weight: var(--weight-medium);
 }
 

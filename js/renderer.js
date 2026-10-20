@@ -134,6 +134,9 @@ function renderExpItem(exp) {
   const tags = exp.tags
       .map(t => `<span class="tag">${esc(t)}</span>`)
       .join('');
+  const bullets = exp.bullets
+      .map(b => `<li>${esc(b)}</li>`)
+      .join('');
 
   return el('article', ['exp-item'],
       `<div class="exp-item__date">
@@ -143,7 +146,7 @@ function renderExpItem(exp) {
      <div class="exp-item__body">
        <div class="exp-item__role">${esc(exp.role)}</div>
        <div class="exp-item__company">${esc(exp.company)}</div>
-       <p class="exp-item__desc">${esc(exp.desc)}</p>
+       <ul class="exp-item__bullets">${bullets}</ul>
        <div class="exp-item__tags">${tags}</div>
      </div>`);
 }
@@ -168,7 +171,7 @@ export function renderExperience(experiences) {
 
 /**
  * Renders the skills card.
- * @param {Array<{name,pct}>} skills
+ * @param {Array<{name}>} skills
  * @returns {HTMLElement}
  */
 export function renderSkillsCard(skills) {
@@ -178,17 +181,7 @@ export function renderSkillsCard(skills) {
   card.appendChild(h2);
 
   const ul = el('ul', ['skill-list']);
-  skills.forEach(({ name, pct }) => {
-    const li = el('li', ['skill-list__item'],
-        `<span class="skill-list__name">${esc(name)}</span>
-       <div class="skill-bar">
-         <div class="skill-bar__fill" style="width:${pct}%"
-              role="meter" aria-valuenow="${pct}" aria-valuemin="0"
-              aria-valuemax="100" aria-label="${esc(name)}: ${pct}%">
-         </div>
-       </div>`);
-    ul.appendChild(li);
-  });
+  skills.forEach(({ name }) => ul.appendChild(el('li', ['skill-list__item'], esc(name))));
 
   card.appendChild(ul);
   return card;
@@ -338,7 +331,7 @@ export function renderLicensesCard(licenses, mobilityNote) {
         `<div class="license-item__circle" aria-label="${esc(type)}">${esc(type)}</div>
          <div class="license-item__info">
            <span class="license-item__label">${esc(label)}</span>
-           <span class="license-item__dates">Exp: ${esc(issued)} · Cad: ${esc(expires)}</span>
+           <span class="license-item__dates">Exp. ${esc(issued)} · Cad. ${esc(expires)}</span>
          </div>`);
     grid.appendChild(item);
   });

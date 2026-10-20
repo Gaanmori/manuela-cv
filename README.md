@@ -56,6 +56,7 @@ Sin `?v=` (o con un valor desconocido) se muestra la versión de Hostelería. La
 │       ├── cert-community-manager.js # Certificado (Community Manager) en formato Base64.
 │       ├── cert-manipulador.js       # Certificado de manipulación de alimentos en formato Base64.
 │       ├── cert-cajero-supermercado.js        # Certificado Cajero/a de Supermercado (AESCO) en Base64.
+│       ├── cert-reponedor-supermercado.js     # Certificado Reponedor/a de Supermercado (AESCO) en Base64.
 │       ├── cert-manipulador-supermercados.js  # Certificado Manipulador/a para Supermercados (AESCO) en Base64.
 │       ├── diploma-colegio.js        # Diploma de bachillerato en formato Base64.
 │       └── diploma-manipulador.js    # Diploma de manipulación de alimentos en formato Base64.
