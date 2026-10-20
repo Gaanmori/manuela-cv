@@ -16,7 +16,7 @@ Una sola base de datos, cinco versiones. Cada una está pensada para imprimirse 
 |---|---|---|
 | Hostelería (por defecto) | Sala, caja y atención al cliente | https://gaanmori.github.io/manuela-cv/?v=hosteleria |
 | Retail / Cajera | Caja, TPV y supermercado | https://gaanmori.github.io/manuela-cv/?v=retail |
-| Administrativa | Cartera, facturación y gestión documental | https://gaanmori.github.io/manuela-cv/?v=administrativa |
+| Administrativa | Cobros, facturación y gestión documental | https://gaanmori.github.io/manuela-cv/?v=administrativa |
 | Atención al cliente | Ventas, telemarketing y comunicación | https://gaanmori.github.io/manuela-cv/?v=atencion-cliente |
 | Completa (base) | Todo lo estudiado y trabajado (ocupa 2 hojas) | https://gaanmori.github.io/manuela-cv/?v=completa |
 

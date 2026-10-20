@@ -245,8 +245,8 @@
         page-break-inside: avoid !important;
         background: var(--color-tint) !important;
         border-color: var(--color-line) !important;
-        padding: 6px 8px !important;
-        margin-bottom: 4px !important;
+        padding: 5px 8px !important;
+        margin-bottom: 3px !important;
         border-radius: 6px !important;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
@@ -269,25 +269,6 @@
         color: var(--color-ink-soft) !important;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
-    }
-
-    /* ── 12. Idiomas ────────────────────────────────────────── */
-    .lang-grid {
-        gap: 8px !important;
-    }
-
-    .lang-item__circle {
-        width: 32px !important;
-        height: 32px !important;
-        font-size: 7pt !important;
-        border-color: var(--color-sand) !important;
-        background: var(--color-cream) !important;
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
-    }
-
-    .lang-item__level {
-        font-size: 7pt !important;
     }
 
     /* ── 13. Educación y Formación ──────────────────────────── */
@@ -324,8 +305,8 @@
     }
 
     .cert-item {
-        margin-bottom: 4px !important;
-        padding-bottom: 4px !important;
+        margin-bottom: 3px !important;
+        padding-bottom: 3px !important;
     }
 
     .cert-item__tags {
@@ -349,7 +330,7 @@
 
     /* ── 14b. Permisos de conducir ─────────────────────────── */
     .license-grid {
-        gap: 4px !important;
+        gap: 2px !important;
     }
 
     .license-item {

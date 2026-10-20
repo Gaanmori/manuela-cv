@@ -188,8 +188,8 @@ export function renderSkillsCard(skills) {
 }
 
 /**
- * Renders the languages card.
- * @param {Array<{code,label,muted}>} languages
+ * Renders the languages card (compact chips, same look as skills).
+ * @param {Array<{label}>} languages
  * @returns {HTMLElement}
  */
 export function renderLanguagesCard(languages) {
@@ -198,16 +198,9 @@ export function renderLanguagesCard(languages) {
   h2.textContent = 'Idiomas';
   card.appendChild(h2);
 
-  const grid = el('div', ['lang-grid']);
-  languages.forEach(({ code, label, muted }) => {
-    const item = el('div', ['lang-item'],
-        `<div class="lang-item__circle${muted ? ' lang-item__circle--muted' : ''}"
-            aria-label="${esc(code)}">${esc(code)}</div>
-       <span class="lang-item__level">${esc(label)}</span>`);
-    grid.appendChild(item);
-  });
-
-  card.appendChild(grid);
+  const ul = el('ul', ['skill-list']);
+  languages.forEach(({ label }) => ul.appendChild(el('li', ['skill-list__item'], esc(label))));
+  card.appendChild(ul);
   return card;
 }
 
@@ -331,7 +324,7 @@ export function renderLicensesCard(licenses, mobilityNote) {
         `<div class="license-item__circle" aria-label="${esc(type)}">${esc(type)}</div>
          <div class="license-item__info">
            <span class="license-item__label">${esc(label)}</span>
-           <span class="license-item__dates">Exp. ${esc(issued)} · Cad. ${esc(expires)}</span>
+           <span class="license-item__dates">${esc(issued)} – ${esc(expires)}</span>
          </div>`);
     grid.appendChild(item);
   });

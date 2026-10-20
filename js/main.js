@@ -24,6 +24,7 @@ import {
   renderQuoteStrip,
   renderExperience,
   renderSkillsCard,
+  renderLanguagesCard,
   renderEducationCard,
   renderCertificationsCard,
   renderLicensesCard,
@@ -66,7 +67,7 @@ function mount() {
   document.documentElement.dataset.theme = view.theme;
   document.title  = `${view.person.firstName} ${view.person.lastName} — CV`;
 
-  const { person, contact, experience, skills, education, certifications, drivingLicenses, mobilityNote } = view;
+  const { person, contact, experience, skills, education, certifications, languages, drivingLicenses, mobilityNote } = view;
 
   /* Header */
   const headerLeft = document.querySelector('.header__left');
@@ -111,6 +112,7 @@ function mount() {
 
     const sidebarItems = [
       renderSkillsCard(skills),
+      renderLanguagesCard(languages),
       renderEducationCard(eduWithPdf),
       renderCertificationsCard(certsWithPdf),
       ...(drivingLicenses.length ? [renderLicensesCard(drivingLicenses, mobilityNote)] : []),

@@ -40,47 +40,6 @@
   background: var(--color-cream);
 }
 
-/* ── Language grid ────────────────────────────────────────── */
-.lang-grid {
-  display: flex;
-  gap: var(--space-5);
-  flex-wrap: wrap;
-}
-
-.lang-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-}
-
-.lang-item__circle {
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  border: 2px solid var(--color-sand);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-serif);
-  font-size: 1.1rem;
-  font-weight: var(--weight-bold);
-  color: var(--color-terracota);
-  background: var(--color-cream);
-}
-
-.lang-item__circle--muted {
-  color: var(--color-muted);
-}
-
-.lang-item__level {
-  font-size: 0.65rem;
-  font-weight: var(--weight-medium);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--color-muted);
-}
-
 /* ── Education entries ────────────────────────────────────── */
 .edu-item {
   margin-bottom: var(--space-5);

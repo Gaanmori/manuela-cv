@@ -55,9 +55,9 @@ export const CV_DATA = {
       company: 'Cafetería El Encuentro — Sagunto, España',
       bullets: [
         'Servicio de barra y sala; elaboración de cafés y carta corta.',
-        'Gestión de caja en entornos de alto volumen.',
+        'Gestión de caja en entornos de alta afluencia.',
       ],
-      tags:    ['Barra', 'Alto volumen', 'Caja'],
+      tags:    ['Barra', 'Alta afluencia', 'Caja'],
     },
     {
       id:      'hycite-admin',
@@ -66,11 +66,11 @@ export const CV_DATA = {
       role:    'Auxiliar Administrativa',
       company: 'Hy Cite — Medellín, Colombia',
       bullets: [
-        'Seguimiento de cartera, conciliaciones y reportes financieros.',
+        'Seguimiento de cobros y cartera de clientes, conciliaciones y informes financieros.',
         'Coordinación con el área comercial y gestión documental.',
         'Logro: reducción de tiempos de conciliación mediante la optimización de procesos.',
       ],
-      tags:    ['Cartera', 'Excel', 'Facturación', 'Reportes'],
+      tags:    ['Cobros', 'Excel', 'Facturación', 'Informes'],
     },
     {
       id:      'hycite-tele',
@@ -79,8 +79,8 @@ export const CV_DATA = {
       role:    'Agente de Telemarketing',
       company: 'Hy Cite — Cartagena de Indias, Colombia',
       bullets: [
-        'Contacto outbound para presentar productos Royal Prestige y agendar citas comerciales.',
-        'Superación constante de las metas de conversión.',
+        'Contacto outbound para presentar productos Royal Prestige y concertar citas comerciales.',
+        'Cumplimiento constante de los objetivos de conversión.',
       ],
       tags:    ['Outbound', 'CRM', 'Conversión'],
     },
@@ -120,12 +120,16 @@ export const CV_DATA = {
     { id: 'reposicion',   name: 'Reposición y merchandising' },
     { id: 'inventarios',  name: 'Control de inventarios' },
     { id: 'admin',        name: 'Gestión administrativa' },
-    { id: 'facturacion',  name: 'Facturación y cartera' },
+    { id: 'facturacion',  name: 'Facturación y cobros' },
     { id: 'conciliacion', name: 'Conciliaciones' },
     { id: 'venta',        name: 'Venta telefónica' },
     { id: 'ofimatica',    name: 'Office y Google Workspace' },
   ],
 
+
+  languages: [
+    { label: 'Español · Nativo' },
+  ],
 
   education: [
     {
@@ -137,7 +141,7 @@ export const CV_DATA = {
     },
     {
       id:        'linguistica',
-      degree: 'Lingüística y Literatura',
+      degree: 'Lingüística y Literatura · Carrera completada',
       school: 'Universidad de Cartagena · Colombia',
       period: '2025',
     },

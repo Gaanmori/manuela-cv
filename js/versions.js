@@ -44,10 +44,10 @@ export const VERSIONS = {
       'encuentro',
       { id: 'hycite-admin',
         bullets: [
-          'Seguimiento de cartera, conciliaciones y reportes financieros.',
+          'Seguimiento de cobros y cartera de clientes, conciliaciones y informes financieros.',
           'Coordinación con el área comercial y gestión documental.',
         ],
-        tags: ['Cartera', 'Excel', 'Reportes'] },
+        tags: ['Cobros', 'Excel', 'Informes'] },
       { id: 'movistar-admin',
         bullets: [
           'Conciliación de ventas diarias y control de inventarios.',
@@ -74,7 +74,7 @@ export const VERSIONS = {
     tagline: 'Cajera · Reponedora · Atención al Cliente',
     summary:
         'Formada como cajera y reponedora de supermercado, con experiencia en caja, TPV y ' +
-        'atención al público en entornos de alto volumen. Más de 10 años previos en operaciones, ' +
+        'atención al público en entornos de alta afluencia. Más de 10 años previos en operaciones, ' +
         'inventarios y administración. Permiso de trabajo en vigor, disponibilidad inmediata y ' +
         'vehículo propio.',
     experience: [
@@ -87,16 +87,16 @@ export const VERSIONS = {
         tags: ['TPV / Caja', 'Take Away', 'Atención al público'] },
       { id: 'encuentro',
         bullets: [
-          'Gestión de caja en entornos de alto volumen.',
+          'Gestión de caja en entornos de alta afluencia.',
           'Servicio de barra y sala con atención directa al cliente.',
         ],
-        tags: ['Caja', 'Alto volumen', 'Atención al público'] },
+        tags: ['Caja', 'Alta afluencia', 'Atención al público'] },
       { id: 'hycite-admin',
         bullets: [
-          'Seguimiento de cartera, facturación y conciliaciones.',
+          'Seguimiento de cobros y cartera de clientes, facturación y conciliaciones.',
           'Coordinación con el área comercial y gestión documental.',
         ],
-        tags: ['Cartera', 'Facturación', 'Excel'] },
+        tags: ['Cobros', 'Facturación', 'Excel'] },
       { id: 'movistar-admin',
         bullets: [
           'Conciliación de ventas diarias y gestión de caja.',
@@ -110,19 +110,19 @@ export const VERSIONS = {
         ],
         tags: ['Caja', 'Inventarios', 'Operaciones'] },
     ],
-    skills:         ['caja', 'atencion', 'reposicion', 'inventarios', 'higiene', 'ofimatica'],
+    skills:         ['caja', 'atencion', 'reposicion', 'inventarios', 'ofimatica'],
     education:      ['bachillerato'],
     certifications: ['cajero-super', 'reponedor-super', 'manipulador-super'],
     licenses:       true,
   },
 
-  /* ── Administrativa: cartera, facturación, gestión documental ── */
+  /* ── Administrativa: cobros, facturación, gestión documental ── */
   administrativa: {
     label:   'Administrativa',
     theme:   'administrativa',
-    tagline: 'Auxiliar Administrativa · Cartera y Facturación',
+    tagline: 'Auxiliar Administrativa · Cobros y Facturación',
     summary:
-        'Auxiliar administrativa con más de 10 años de experiencia en cartera, conciliaciones, ' +
+        'Auxiliar administrativa con más de 10 años de experiencia en cobros, conciliaciones, ' +
         'facturación y gestión documental, con mejoras de procesos que redujeron tiempos de ' +
         'gestión. Manejo de Office y Google Workspace. Permiso de trabajo en vigor, ' +
         'disponibilidad inmediata.',
@@ -131,7 +131,7 @@ export const VERSIONS = {
         bullets: ['Gestión de caja y TPV y coordinación de pedidos en un restaurante.'],
         tags: ['TPV / Caja', 'Organización'] },
       { id: 'encuentro',
-        bullets: ['Gestión de caja y atención al cliente en un entorno de alto volumen.'],
+        bullets: ['Gestión de caja y atención al cliente en un entorno de alta afluencia.'],
         tags: ['Caja', 'Atención al cliente'] },
       'hycite-admin',
       'movistar-admin',
@@ -168,15 +168,15 @@ export const VERSIONS = {
       { id: 'encuentro',
         bullets: [
           'Servicio de barra y sala con atención directa al cliente.',
-          'Gestión de caja en entornos de alto volumen.',
+          'Gestión de caja en entornos de alta afluencia.',
         ],
-        tags: ['Barra', 'Alto volumen', 'Atención al cliente'] },
+        tags: ['Barra', 'Alta afluencia', 'Atención al cliente'] },
       { id: 'hycite-admin',
         bullets: [
-          'Seguimiento de cartera y conciliaciones.',
+          'Seguimiento de cobros y cartera de clientes y conciliaciones.',
           'Coordinación constante con el área comercial.',
         ],
-        tags: ['Cartera', 'Coordinación comercial', 'Excel'] },
+        tags: ['Cobros', 'Coordinación comercial', 'Excel'] },
       'hycite-tele',
       { id: 'movistar-admin',
         bullets: [
