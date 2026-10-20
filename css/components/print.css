@@ -209,13 +209,13 @@
         font-size: 8.5pt !important;
         color: var(--color-ink-soft) !important;
         line-height: 1.4 !important;
-        padding-left: 10px !important;
+        gap: 6px !important;
     }
 
     .exp-item__bullets li::before {
         width: 3.5px !important;
         height: 3.5px !important;
-        top: 0.55em !important;
+        margin-top: 0.55em !important;
         background: var(--color-terracota) !important;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;

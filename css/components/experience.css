@@ -13,7 +13,6 @@
   font-style: italic;
   color: var(--color-terracota);
   margin-bottom: var(--space-8);
-  position: relative;
 }
 
 .section-label::after {
@@ -117,8 +116,8 @@
 }
 
 .exp-item__bullets li {
-  position: relative;
-  padding-left: var(--space-4);
+  display: flex;
+  gap: var(--space-3);
   font-size: var(--text-base);
   line-height: var(--leading-normal);
   color: var(--color-brown);
@@ -126,9 +125,8 @@
 
 .exp-item__bullets li::before {
   content: '';
-  position: absolute;
-  left: 0;
-  top: 0.7em;
+  flex: none;
+  margin-top: 0.65em;
   width: 5px;
   height: 5px;
   border-radius: 50%;
