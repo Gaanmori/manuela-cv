@@ -20,7 +20,7 @@ Una sola base de datos, cinco versiones. Cada una está pensada para imprimirse 
 | Atención al cliente | Ventas, telemarketing y comunicación | https://gaanmori.github.io/manuela-cv/?v=atencion-cliente |
 | Completa (base) | Todo lo estudiado y trabajado (ocupa 2 hojas) | https://gaanmori.github.io/manuela-cv/?v=completa |
 
-Sin `?v=` (o con un valor desconocido) se muestra la versión de Hostelería. En pantalla hay un selector de versiones arriba que no aparece al imprimir.
+Sin `?v=` (o con un valor desconocido) se muestra la versión de Hostelería. La página no muestra ningún selector de versiones: quien reciba un enlace solo ve esa versión.
 
 ### Cómo se mantienen
 * **`js/data.js`** es la base maestra: cada trabajo, curso, estudio o habilidad se escribe **una sola vez** y tiene un `id`.

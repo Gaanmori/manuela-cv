@@ -16,7 +16,6 @@
 'use strict';
 
 import { CV_DATA }            from './data.js';
-import { VERSIONS }           from './versions.js';
 import { resolveVersionId, buildView } from './resolver.js';
 import {
   renderPhoto,
@@ -28,7 +27,6 @@ import {
   renderEducationCard,
   renderCertificationsCard,
   renderLicensesCard,
-  renderVersionSwitcher,
 }                             from './renderer.js';
 
 /* ── Photo source (inlined from assets/photo.js) ─────────── */
@@ -66,10 +64,6 @@ function mount() {
   document.title  = `${view.person.firstName} ${view.person.lastName} — CV`;
 
   const { person, contact, experience, skills, education, certifications, drivingLicenses, mobilityNote } = view;
-
-  /* Version switcher (screen only) */
-  const pageEl = document.querySelector('.page');
-  if (pageEl) pageEl.prepend(renderVersionSwitcher(VERSIONS, versionId));
 
   /* Header */
   const headerLeft = document.querySelector('.header__left');
